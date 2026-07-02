@@ -6,6 +6,7 @@
 <title>FEBROS | Sistemas de Gestión y Desarrollo de Software</title>
 <meta name="description" content="FEBROS - Sistemas de gestión que piensan por ti. Punto de venta, gestión de peluquerías, desarrollo de software a medida y agentes IA en Uruguay.">
 <meta name="theme-color" content="#f97316">
+<link rel="icon" href="/assets/favicon.png?v=2" type="image/png">
 <style>
 :root{
   --navy:#1e2a4a; --navy-2:#16203a; --navy-3:#0e1526;
@@ -33,7 +34,8 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;transition:.35s}
 header.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 header.scrolled .nav{padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px}
-.brand img{height:38px;width:auto;flex:none}
+.brand img.brand-icon{width:38px;height:38px;border-radius:10px;flex:none}
+.brand img.brand-logo{height:40px;width:auto;flex:none}
 .brand b{font-size:1.35rem;font-weight:900;color:var(--navy);letter-spacing:.02em}
 .navlinks{display:flex;gap:30px;align-items:center}
 .navlinks a{font-weight:600;font-size:.95rem;color:var(--navy);opacity:.85;transition:.2s}
@@ -382,7 +384,8 @@ body.introlock{overflow:hidden;height:100vh}
 <header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="FEBROS">
-      <img src="assets/logo-febros.png" alt="FEBROS" width="160" height="38">
+      <img src="/assets/favicon.png?v=2" alt="" class="brand-icon" width="38" height="38" aria-hidden="true">
+      <b>FEBROS</b>
     </a>
     <nav class="navlinks">
       <a href="#productos">Productos</a>
@@ -698,7 +701,8 @@ body.introlock{overflow:hidden;height:100vh}
     <div class="fgrid">
       <div>
         <div class="brand" style="margin-bottom:14px">
-          <img src="assets/logo-febros.png" alt="FEBROS" style="height:34px;width:auto">
+          <img src="/assets/favicon.png?v=2" alt="" class="brand-icon" width="34" height="34" aria-hidden="true">
+          <b>FEBROS</b>
         </div>
         <p style="max-width:34ch">Sistemas de gestión que piensan por vos. Desarrollo de software, punto de venta y agentes de IA en Uruguay.</p>
       </div>
