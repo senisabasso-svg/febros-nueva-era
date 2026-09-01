@@ -1,27 +1,12 @@
 /* ══════════════════════════════════════
-   DEVICE MOCKUP — real product footage
-   Plays only while on screen; tilts to cursor.
+   DEVICE MOCKUP — tilt + interactive demo
 ══════════════════════════════════════ */
 (function(){
-  const vid   = document.getElementById('appVideo');
   const wrap  = document.getElementById('deviceWrap');
   const frame = document.getElementById('deviceFrame');
-  if(!vid || !wrap || !frame) return;
+  if(!wrap || !frame) return;
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting && !reduce){
-        const p = vid.play();
-        if(p && p.catch) p.catch(() => {});
-      } else {
-        vid.pause();
-      }
-    });
-  }, { threshold: 0.15 });
-  io.observe(wrap);
-  if(reduce) vid.pause();
 
   if(reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 

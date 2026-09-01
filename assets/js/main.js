@@ -30,7 +30,6 @@
   load('/assets/js/scroll-fade.js');
   load('/assets/js/systems.js');
   load('/assets/js/marquee.js');
-  load('/assets/js/video.js');
 
   if (!REDUCE) {
     load('/assets/js/cursor.js');
@@ -44,6 +43,7 @@
 
   whenVisible(document.getElementById('deviceWrap'), function () {
     load('/assets/js/device.js');
+    load('/assets/js/device-demo.js');
   }, '400px 0px');
 
   whenVisible(document.getElementById('globeStage'), function () {
