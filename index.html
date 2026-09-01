@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FEBROS | Sistemas de Gestión y Desarrollo de Software</title>
-<meta name="description" content="FEBROS — Gestión de peluquerías, Tiendas, SPA y software a medida en Uruguay.">
+<meta name="description" content="FEBROS — Gestión de peluquerías, Tiendas, Gestión de socios y software a medida. Salto, Uruguay. Clientes en todo el país.">
 <meta name="theme-color" content="#FF7300">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,9 @@
 <link rel="stylesheet" href="/assets/css/demo-pelu-panel.css">
 <link rel="stylesheet" href="/assets/css/demo-tiendas-login.css">
 <link rel="stylesheet" href="/assets/css/demo-tiendas-panel.css">
+<link rel="stylesheet" href="/assets/css/demo-marketing-login.css">
+<link rel="stylesheet" href="/assets/css/demo-marketing-panel.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
 
 </head><body>
@@ -49,13 +52,13 @@
   <div class="hero-scrim"></div>
 
   <div class="intro-content">
-    <p class="eyebrow hero-reveal" style="animation-delay:0.1s">Software Development · Uruguay</p>
+    <p class="eyebrow hero-reveal" style="animation-delay:0.1s">Software Development · Salto, Uruguay</p>
     <h1 class="hero-reveal" style="animation-delay:0.25s">
       <span class="headline-solid">Tu negocio no</span>
       <span class="headline-solid">factura poco.</span>
       <span class="headline-accent">Está desordenado.</span>
     </h1>
-    <p class="subline hero-reveal" style="animation-delay:0.45s">Gestión de peluquerías, Tiendas, SPA con socios y cuotas, software a medida y agentes de IA. Todo en la nube, sin instalar nada.</p>
+    <p class="subline hero-reveal" style="animation-delay:0.45s">Gestión de peluquerías, Tiendas, Gestión de socios, software a medida y agentes de IA. Todo en la nube, sin instalar nada.</p>
     <div class="intro-actions hero-reveal" style="animation-delay:0.6s">
       <a href="https://wa.me/59892331019?text=Hola%20FEBROS!%20Quiero%20una%20demo%20de%20sus%20sistemas." class="btn-primary" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -77,8 +80,8 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span>Gestión de Peluquerías <span class="m-dot">·</span> Tiendas <span class="m-dot">·</span> SPA socios y cuotas <span class="m-dot">·</span> Control biométrico <span class="m-dot">·</span> Marketing <span class="m-dot">·</span> Software a medida <span class="m-dot">·</span> Uruguay <span class="m-dot">·</span>&nbsp;</span>
-    <span>Gestión de Peluquerías <span class="m-dot">·</span> Tiendas <span class="m-dot">·</span> SPA socios y cuotas <span class="m-dot">·</span> Control biométrico <span class="m-dot">·</span> Marketing <span class="m-dot">·</span> Software a medida <span class="m-dot">·</span> Uruguay <span class="m-dot">·</span>&nbsp;</span>
+    <span>Gestión de Peluquerías <span class="m-dot">·</span> Tiendas <span class="m-dot">·</span> Gestión de socios <span class="m-dot">·</span> Control biométrico <span class="m-dot">·</span> Marketing <span class="m-dot">·</span> Software a medida <span class="m-dot">·</span> Salto, Uruguay <span class="m-dot">·</span>&nbsp;</span>
+    <span>Gestión de Peluquerías <span class="m-dot">·</span> Tiendas <span class="m-dot">·</span> Gestión de socios <span class="m-dot">·</span> Control biométrico <span class="m-dot">·</span> Marketing <span class="m-dot">·</span> Software a medida <span class="m-dot">·</span> Salto, Uruguay <span class="m-dot">·</span>&nbsp;</span>
   </div>
 </div>
 
@@ -93,7 +96,8 @@
   <div class="systems-tabs" role="tablist">
     <button class="sys-tab active" data-sys="pelu" type="button" role="tab" aria-selected="true">Peluquerías</button>
     <button class="sys-tab" data-sys="sh" type="button" role="tab" aria-selected="false">Tiendas</button>
-    <button class="sys-tab" data-sys="spa" type="button" role="tab" aria-selected="false">SPA / Socios</button>
+    <button class="sys-tab" data-sys="spa" type="button" role="tab" aria-selected="false">Gestión de socios</button>
+    <button class="sys-tab" data-sys="mkt" type="button" role="tab" aria-selected="false">Marketing empresas</button>
   </div>
 
   <div class="device-inner sys-unified-inner">
@@ -127,10 +131,10 @@
                           <p class="login-split-subtitle">Ingrese sus datos para acceder al salón.</p>
                           <form class="login-split-form">
                             <label class="login-split-label">Correo electrónico
-                              <input class="login-split-input" type="email" autocomplete="username" placeholder="nombre@ejemplo.com" value="demo@gmail.com" required>
+                              <input class="login-split-input" type="email" autocomplete="username" placeholder="demo@gmail.com" value="demo@gmail.com" required>
                             </label>
                             <label class="login-split-label">Contraseña
-                              <input class="login-split-input" type="password" autocomplete="current-password" placeholder="••••••••" value="clavedemo" required>
+                              <input class="login-split-input" type="password" autocomplete="current-password" placeholder="••••••••" value="demo" required>
                             </label>
                             <div class="login-split-row">
                               <label class="login-split-check"><input type="checkbox"><span>Recordarme en este equipo</span></label>
@@ -223,7 +227,7 @@
                               <h3>Top proveedores</h3>
                               <ul class="informes-bars">
                                 <li>
-                                  <div class="informes-bars-head"><span>Sin proveedor</span><strong>$&nbsp;4.380,00</strong></div>
+                                  <div class="informes-bars-head"><span>demo</span><strong>$&nbsp;4.380,00</strong></div>
                                   <div class="informes-bar-track"><div class="informes-bar-fill" style="width:100%"></div></div>
                                 </li>
                               </ul>
@@ -250,7 +254,7 @@
                               </ul>
                               <h4 class="informes-widget-subtitle">Top categorías</h4>
                               <ul class="informes-tags">
-                                <li><span>demoproducto</span><strong>$&nbsp;4.380,00</strong></li>
+                                <li><span>demo</span><strong>$&nbsp;4.380,00</strong></li>
                               </ul>
                             </article>
                           </div>
@@ -262,9 +266,9 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
-                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;980,00</td><td>—</td><td>—</td></tr>
-                                <tr><td>18</td><td>7/7/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
+                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demo</td><td>demo</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
+                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demo</td><td>demo</td><td>—</td><td>—</td><td>$&nbsp;980,00</td><td>—</td><td>—</td></tr>
+                                <tr><td>18</td><td>7/7/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demo</td><td>demo</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
                               </tbody>
                             </table>
                           </div>
@@ -293,7 +297,7 @@
                         <input type="email" autocomplete="username" value="demo@gmail.com" required>
                       </label>
                       <label>Contraseña
-                        <input type="password" autocomplete="current-password" value="clavedemo" required>
+                        <input type="password" autocomplete="current-password" value="demo" required>
                       </label>
                       <button type="submit" class="btn btn-accent">Iniciar sesión</button>
                     </form>
@@ -379,14 +383,14 @@
               </div>
             </div>
           </div>
-          <!-- SPA / Socios -->
+          <!-- Gestión de socios -->
           <div class="device-demo-layer" data-sys="spa">
             <div class="device-app" data-interactive-demo>
               <div class="device-app-view da-login is-active" data-view="login">
                 <div class="da-login-card">
                   <div class="da-login-brand">
                     <img src="/assets/logo-wordmark.png" alt="demo" width="120" height="30">
-                    <h2 class="da-login-title">Gestión</h2>
+                    <h2 class="da-login-title">Gestión de socios</h2>
                   </div>
                   <p class="da-login-sub">Accedé a tu panel de gestión</p>
                   <form>
@@ -396,7 +400,7 @@
                     </div>
                     <div class="da-field">
                       <label>Contraseña</label>
-                      <input type="password" value="clavedemo" autocomplete="off">
+                      <input type="password" value="demo" autocomplete="off">
                     </div>
                     <button class="da-btn-login" type="submit">Ingresar</button>
                   </form>
@@ -431,6 +435,149 @@
                   </div>
                   <button type="button" class="da-back" data-action="back-login">← Volver al login</button>
                 </main>
+              </div>
+            </div>
+          </div>
+          <!-- Marketing empresas -->
+          <div class="device-demo-layer" data-sys="mkt">
+            <div class="device-app device-app--marketing" data-interactive-demo>
+              <div class="device-app-view is-active" data-view="login">
+                <div class="login-page">
+                  <div class="card login-card">
+                    <video class="login-video" src="/assets/app-demo.mp4" poster="/assets/logo-wordmark.png" autoplay loop playsinline muted aria-label="Febros Software Development"></video>
+                    <h2 class="login-title">FEBROS</h2>
+                    <p class="login-subtitle">Panel de administración</p>
+                    <p class="login-trademark">Marca registrada oficialmente por Febros Software Development, Uruguay.<strong>Febros S.A.</strong></p>
+                    <form>
+                      <label>Email</label>
+                      <input type="email" value="demo@gmail.com" autocomplete="username" required>
+                      <label>Contraseña</label>
+                      <input type="password" value="demo" autocomplete="current-password" required>
+                      <button class="btn" type="submit">Acceder</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="device-app-view is-hidden" data-view="dash">
+                <div class="mkt-dash">
+                  <div class="mkt-atmosphere" aria-hidden="true"></div>
+                  <div class="mkt-shell">
+                    <header class="mkt-top">
+                      <span class="mkt-eyebrow"><span class="mkt-ai-dot" aria-hidden="true"></span>Social · Instagram · IA activa</span>
+                      <h1>Overview</h1>
+                      <p>demo · @demo</p>
+                      <div class="mkt-actions">
+                        <button type="button" class="mkt-btn">Posts programados</button>
+                        <button type="button" class="mkt-btn">Chatbot</button>
+                        <button type="button" class="mkt-btn mkt-btn--accent">Actualizar</button>
+                      </div>
+                    </header>
+                    <main class="mkt-main">
+                      <div class="mkt-hero-row">
+                        <div class="mkt-card mkt-profile">
+                          <img class="mkt-avatar" src="/assets/logo-febros.png" alt="Avatar de @demo" width="42" height="42">
+                          <div>
+                            <h2>@demo</h2>
+                            <p class="muted">demo · actualizado demo</p>
+                            <p class="mkt-sync">Motor IA sincronizado</p>
+                          </div>
+                        </div>
+                        <div class="mkt-card mkt-ai-card">
+                          <h3>Resumen generado por IA</h3>
+                          <ol>
+                            <li>El Reel «demo» concentra el 45% de las vistas recientes.</li>
+                            <li>Tasa de interacción sobre vistas recientes: 1,1%.</li>
+                            <li>248 seguidores y 23 publicaciones en la cuenta.</li>
+                          </ol>
+                        </div>
+                      </div>
+                      <div class="mkt-range">
+                        <div class="mkt-range__tabs" role="tablist">
+                          <button type="button" class="mkt-range__tab">Hoy</button>
+                          <button type="button" class="mkt-range__tab is-active">7 días</button>
+                          <button type="button" class="mkt-range__tab">30 días</button>
+                        </div>
+                        <p class="muted">Igual que Instagram: Hoy, 7 o 30 días.</p>
+                      </div>
+                      <div class="mkt-kpi-grid">
+                        <div class="mkt-kpi mkt-kpi--cyan"><p class="mkt-kpi__label">Seguidores</p><span class="mkt-kpi__value">248</span><span class="mkt-kpi__hint">cuenta</span></div>
+                        <div class="mkt-kpi mkt-kpi--blue"><p class="mkt-kpi__label">Vistas</p><span class="mkt-kpi__value">2.364</span><span class="mkt-kpi__hint">7 días</span></div>
+                        <div class="mkt-kpi mkt-kpi--violet"><p class="mkt-kpi__label">Alcance</p><span class="mkt-kpi__value">1.061</span><span class="mkt-kpi__hint">7 días</span></div>
+                        <div class="mkt-kpi mkt-kpi--pink"><p class="mkt-kpi__label">Engaged</p><span class="mkt-kpi__value">17</span><span class="mkt-kpi__hint">7 días</span></div>
+                        <div class="mkt-kpi mkt-kpi--orange"><p class="mkt-kpi__label">Likes</p><span class="mkt-kpi__value">15</span><span class="mkt-kpi__hint">7 días</span></div>
+                        <div class="mkt-kpi mkt-kpi--green"><p class="mkt-kpi__label">Interacciones</p><span class="mkt-kpi__value">23</span><span class="mkt-kpi__hint">7 días</span></div>
+                      </div>
+                      <p class="mkt-section-label"><span>Rendimiento</span></p>
+                      <div class="mkt-card">
+                        <div class="mkt-panel__head"><h2>Reels más vistos</h2><span class="muted">Top por vistas</span></div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>demo</span><strong>7.498</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:100%;background:#22d3ee"></div></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>demo</span><strong>2.137</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:29%;background:#22d3ee"></div></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>demo</span><strong>2.007</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:27%;background:#22d3ee"></div></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>demo</span><strong>1.325</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:18%;background:#22d3ee"></div></div>
+                        </div>
+                      </div>
+                      <div class="mkt-card">
+                        <div class="mkt-panel__head"><h2>Interacciones</h2><span class="muted">7 días</span></div>
+                        <div class="mkt-mini-kpis">
+                          <div><span>Vistas</span><strong>2.364</strong></div>
+                          <div><span>Likes</span><strong>15</strong></div>
+                          <div><span>Shares</span><strong>3</strong></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>Likes</span><strong>15</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:100%;background:#60a5fa"></div></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>Shares</span><strong>3</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:20%;background:#fb923c"></div></div>
+                        </div>
+                      </div>
+                      <p class="mkt-section-label"><span>Alcance</span></p>
+                      <div class="mkt-card">
+                        <div class="mkt-panel__head"><h2>Quién vio el contenido</h2><span class="muted">7 días</span></div>
+                        <p class="mkt-callout"><strong>96%</strong><span>del alcance vino de no seguidores</span></p>
+                        <p class="muted">Sin desglose de vistas por seguidor en este rango.</p>
+                      </div>
+                      <p class="mkt-section-label"><span>Audiencia</span></p>
+                      <div class="mkt-card">
+                        <div class="mkt-panel__head"><h2>Género</h2><span class="muted">seguidores</span></div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>Mujeres</span><strong>62%</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:62%;background:#f472b6"></div></div>
+                        </div>
+                        <div class="mkt-bar-row">
+                          <div class="mkt-bar-row__meta"><span>Hombres</span><strong>34%</strong></div>
+                          <div class="mkt-bar-track"><div class="mkt-bar-fill" style="width:34%;background:#f472b6"></div></div>
+                        </div>
+                      </div>
+                      <div class="mkt-card">
+                        <div class="mkt-panel__head"><h2>Cuándo están online</h2><span class="muted">promedio 24 h</span></div>
+                        <div class="mkt-heat" role="img" aria-label="Seguidores online por hora">
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:39%"></span><span class="mkt-heat__label">0</span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:52%"></span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:71%"></span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:90%"></span><span class="mkt-heat__label">12</span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:100%"></span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:81%"></span><span class="mkt-heat__label">18</span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:41%"></span></div>
+                          <div class="mkt-heat__col"><span class="mkt-heat__bar" style="height:17%"></span><span class="mkt-heat__label">23</span></div>
+                        </div>
+                      </div>
+                      <button type="button" class="mkt-back" data-action="back-login">← Volver al login</button>
+                    </main>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -479,7 +626,7 @@
 
       <div class="sys-panel" data-sys="spa" role="tabpanel">
         <div class="sys-kicker">A medida · Socios &amp; cuotas</div>
-        <h3>Gestión SPA / Socios</h3>
+        <h3>Gestión de socios</h3>
         <p class="sys-lead">Socios, familias, cuotas, cargos, cobranza y control de ingreso (también con biométrico).</p>
         <ul class="sys-feats">
           <li>Panel con cobrado, pendiente y socios activos</li>
@@ -489,6 +636,20 @@
         </ul>
         <div class="sys-chips"><span>Socios</span><span>Cuotas</span><span>Cargos</span><span>Biométrico</span></div>
         <a class="btn-secondary" href="#contacto">Quiero un sistema a medida →</a>
+      </div>
+
+      <div class="sys-panel" data-sys="mkt" role="tabpanel">
+        <div class="sys-kicker">Producto propio · Redes &amp; IA</div>
+        <h3>Marketing empresas</h3>
+        <p class="sys-lead">Dashboard de Instagram con métricas en tiempo real, resúmenes por IA, programación de posts y chatbot integrado.</p>
+        <ul class="sys-feats">
+          <li>Overview con seguidores, vistas, alcance e interacciones</li>
+          <li>Reels más vistos y desglose de engagement</li>
+          <li>Audiencia, horarios online y análisis por rango</li>
+          <li>Posts programados y conversaciones del chatbot</li>
+        </ul>
+        <div class="sys-chips"><span>Instagram</span><span>IA</span><span>Métricas</span><span>Chatbot</span><span>Programación</span></div>
+        <a class="btn-secondary" href="https://www.instagram.com/febros.uy/" target="_blank" rel="noopener">@febros.uy →</a>
       </div>
 
       <ul class="device-list sys-unified-list">
@@ -531,23 +692,23 @@
 <section class="reach-band">
   <div class="section-eye">
     <div class="section-tag">Alcance</div>
-    <h2 class="section-title">Desde Uruguay,<br>para todo el mundo</h2>
+    <h2 class="section-title">Desde Salto, Uruguay<br>con clientes en todo el país</h2>
   </div>
   <div class="reach-grid">
     <div class="reach-item">
       <div class="reach-dot" style="background:var(--orange);box-shadow:0 0 10px var(--orange)"></div>
-      <div class="reach-title">Montevideo</div>
-      <div class="reach-body">Base de operaciones. Reuniones presenciales cuando hacen falta.</div>
+      <div class="reach-title">Salto</div>
+      <div class="reach-body">Nuestra base en el norte del país. Reuniones presenciales cuando hacen falta.</div>
+    </div>
+    <div class="reach-item">
+      <div class="reach-dot" style="background:var(--gold2);box-shadow:0 0 10px var(--gold2)"></div>
+      <div class="reach-title">Todo Uruguay</div>
+      <div class="reach-body">Clientes en Montevideo, el interior y distintas regiones. El sistema llega igual a todos.</div>
     </div>
     <div class="reach-item">
       <div class="reach-dot" style="background:var(--orange2);box-shadow:0 0 10px var(--orange2)"></div>
       <div class="reach-title">Infraestructura cloud</div>
       <div class="reach-body">Sin servidores en tu local. Nada que mantener de tu lado.</div>
-    </div>
-    <div class="reach-item">
-      <div class="reach-dot" style="background:#F0EEE8;box-shadow:0 0 10px rgba(240,238,232,0.5)"></div>
-      <div class="reach-title">Acceso remoto</div>
-      <div class="reach-body">Desde cualquier dispositivo, en cualquier sucursal, a cualquier hora.</div>
     </div>
     <div class="reach-item">
       <div class="reach-dot" style="background:var(--amber);box-shadow:0 0 10px var(--amber)"></div>
@@ -618,7 +779,7 @@
     <b>HACER CRECER TU NEGOCIO.</b></p>
   <div class="foot-r">
     <a href="https://www.instagram.com/febros.uy/" target="_blank" rel="noopener">febros.uy</a> · <a href="https://febros-peluquerias.com/" target="_blank" rel="noopener">febros-peluquerias.com</a><br>
-    <a href="https://www.instagram.com/febros.uy/" target="_blank" rel="noopener">@febros.uy</a> · Montevideo, Uruguay<br>
+    <a href="https://www.instagram.com/febros.uy/" target="_blank" rel="noopener">@febros.uy</a> · Salto, Uruguay<br>
     <a href="https://wa.me/59892331019?text=Hola%20FEBROS!%20Quiero%20una%20demo%20de%20sus%20sistemas." target="_blank" rel="noopener">WhatsApp 092 331 019</a></div>
 </footer>
 

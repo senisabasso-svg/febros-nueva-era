@@ -13,14 +13,15 @@
   const hints = {
     pelu: 'Tocá <b>Iniciar sesión</b> para ver informes del salón',
     sh: 'Tocá <b>Iniciar sesión</b> para ver Vivo TikTok',
-    spa: 'Tocá <b>Ingresar</b> para ver el panel de socios'
+    spa: 'Tocá <b>Ingresar</b> para ver el panel de socios',
+    mkt: 'Tocá <b>Acceder</b> para ver el overview de Instagram'
   };
 
   function resetDemoLayer(layer) {
     if (!layer) return;
     const login = layer.querySelector('[data-view="login"]');
     const dash = layer.querySelector('[data-view="dash"]');
-    const main = dash && dash.querySelector('.da-main, .sdemo-main');
+    const main = dash && dash.querySelector('.da-main, .sdemo-main, .mkt-main, .main');
     if (!login || !dash) return;
     dash.classList.remove('is-active');
     dash.classList.add('is-hidden');

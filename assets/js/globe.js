@@ -85,7 +85,7 @@
     const la = lat * Math.PI / 180, lo = lon * Math.PI / 180;
     return { x: Math.cos(la)*Math.cos(lo), y: Math.sin(la), z: Math.cos(la)*Math.sin(lo) };
   }
-  const HOME = { name:'MONTEVIDEO', lat:-34.90, lon:-56.16, c:[255,115,0], home:true };
+  const HOME = { name:'SALTO', lat:-31.38, lon:-57.97, c:[255,115,0], home:true };
   const CITIES = [
     HOME,
     { name:'BUENOS AIRES', lat:-34.60, lon:-58.38, c:[255,149,56] },
@@ -121,12 +121,12 @@
   });
 
   /* negative tilt = camera just south of the equator. Our subject is the
-     southern hemisphere, so a positive tilt buried Montevideo on the limb. */
+     southern hemisphere, so a positive tilt buried Salto on the limb. */
   const TILT = -16 * Math.PI / 180;
   const CAM  = 2.75;
   const AUTO = 0.155;
   /* a point at longitude L faces the camera when rotY = L − 90°.
-     Centring South America (≈ −62°) puts Montevideo just right of centre. */
+     Centring South America (≈ −62°) keeps Uruguay in frame. */
   let rotY = (-62 - 90) * Math.PI / 180;
   const MAX_VEL = 3.2;
   let vel = 0, dragging = false, lastPX = 0, tiltX = 0, tiltXTarget = 0;
@@ -303,7 +303,7 @@
       ctx.textBaseline = 'middle';
 
       /* project every city once, then draw pins, then labels with collision
-         avoidance — Montevideo/Buenos Aires/Santiago sit within a few degrees
+         avoidance — Salto/Buenos Aires/Santiago sit within a few degrees
          of each other and their labels overlapped into mush */
       const vis = [];
       CITIES.forEach((city, ci) => {

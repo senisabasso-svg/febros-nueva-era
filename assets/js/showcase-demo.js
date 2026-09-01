@@ -19,7 +19,7 @@
       loginView.classList.add('is-hidden');
       dashView.classList.remove('is-hidden');
       dashView.classList.add('is-active');
-      var main = dashView.querySelector('.da-main, .sdemo-main, .main');
+      var main = dashView.querySelector('.da-main, .sdemo-main, .mkt-main, .main');
       if (main) main.scrollTop = 0;
       var shell = dashView.querySelector('.app--shell');
       if (shell) {
@@ -58,9 +58,11 @@
       backBtn.addEventListener('click', showLogin);
     }
 
-    dashView.querySelectorAll('.da-tab').forEach(function (tab) {
+    dashView.querySelectorAll('.da-tab, .mkt-range__tab').forEach(function (tab) {
       tab.addEventListener('click', function () {
-        dashView.querySelectorAll('.da-tab').forEach(function (t) {
+        var group = tab.closest('.da-tabs, .mkt-range__tabs');
+        if (!group) return;
+        group.querySelectorAll('.da-tab, .mkt-range__tab').forEach(function (t) {
           t.classList.remove('is-active');
         });
         tab.classList.add('is-active');

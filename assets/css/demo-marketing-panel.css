@@ -1,0 +1,386 @@
+/* Marketing empresas panel — dark Instagram dashboard (scoped) */
+.device-app--marketing:has([data-view="dash"].is-active) {
+  background: #101418;
+  color: #e8edf4;
+}
+
+.device-app--marketing [data-view="dash"] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #101418;
+}
+
+.device-app--marketing .mkt-dash {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #e8edf4;
+}
+
+.device-app--marketing .mkt-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(34, 211, 238, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 30% at 90% 20%, rgba(167, 139, 250, 0.06), transparent 50%);
+}
+
+.device-app--marketing .mkt-shell {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.device-app--marketing .mkt-top {
+  flex: none;
+  padding: 36px 10px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.device-app--marketing .mkt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #22d3ee;
+}
+
+.device-app--marketing .mkt-ai-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 8px #22d3ee;
+}
+
+.device-app--marketing .mkt-top h1 {
+  margin: 0 0 2px;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.device-app--marketing .mkt-top > p {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #8b95a8;
+}
+
+.device-app--marketing .mkt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.device-app--marketing .mkt-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font: inherit;
+  font-size: 0.62rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.device-app--marketing .mkt-btn--accent {
+  border-color: rgba(255, 115, 0, 0.35);
+  background: rgba(255, 115, 0, 0.12);
+  color: #ffb366;
+}
+
+.device-app--marketing .mkt-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 8px 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.device-app--marketing .mkt-card {
+  background: rgba(22, 27, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-hero-row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.device-app--marketing .mkt-avatar {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(34, 211, 238, 0.45);
+}
+
+.device-app--marketing .mkt-profile h2 {
+  margin: 0 0 2px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.device-app--marketing .muted {
+  color: #8b95a8;
+  font-size: 0.68rem;
+}
+
+.device-app--marketing .mkt-sync {
+  margin: 4px 0 0;
+  font-size: 0.65rem;
+  color: #22d3ee;
+}
+
+.device-app--marketing .mkt-ai-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.device-app--marketing .mkt-ai-card ol {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.device-app--marketing .mkt-range {
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-range__tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.device-app--marketing .mkt-range__tab {
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: transparent;
+  color: #94a3b8;
+  font: inherit;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.device-app--marketing .mkt-range__tab.is-active {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.35);
+  color: #67e8f9;
+}
+
+.device-app--marketing .mkt-kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-kpi {
+  text-align: left;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(22, 27, 34, 0.95);
+  cursor: default;
+}
+
+.device-app--marketing .mkt-kpi__label {
+  margin: 0 0 2px;
+  font-size: 0.62rem;
+  color: #8b95a8;
+}
+
+.device-app--marketing .mkt-kpi__value {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.device-app--marketing .mkt-kpi__hint {
+  font-size: 0.58rem;
+  color: #64748b;
+}
+
+.device-app--marketing .mkt-kpi--cyan .mkt-kpi__value { color: #22d3ee; }
+.device-app--marketing .mkt-kpi--blue .mkt-kpi__value { color: #60a5fa; }
+.device-app--marketing .mkt-kpi--violet .mkt-kpi__value { color: #a78bfa; }
+.device-app--marketing .mkt-kpi--pink .mkt-kpi__value { color: #f472b6; }
+.device-app--marketing .mkt-kpi--orange .mkt-kpi__value { color: #fb923c; }
+.device-app--marketing .mkt-kpi--green .mkt-kpi__value { color: #4ade80; }
+
+.device-app--marketing .mkt-section-label {
+  margin: 6px 0 6px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.device-app--marketing .mkt-panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-panel__head h2 {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.device-app--marketing .mkt-bar-row {
+  margin-bottom: 7px;
+}
+
+.device-app--marketing .mkt-bar-row__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 3px;
+  font-size: 0.65rem;
+}
+
+.device-app--marketing .mkt-bar-row__meta span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #cbd5e1;
+}
+
+.device-app--marketing .mkt-bar-row__meta strong {
+  flex: none;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: #e2e8f0;
+}
+
+.device-app--marketing .mkt-bar-track {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.device-app--marketing .mkt-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.device-app--marketing .mkt-mini-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.device-app--marketing .mkt-mini-kpis div {
+  text-align: center;
+}
+
+.device-app--marketing .mkt-mini-kpis span {
+  display: block;
+  font-size: 0.6rem;
+  color: #8b95a8;
+}
+
+.device-app--marketing .mkt-mini-kpis strong {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.82rem;
+}
+
+.device-app--marketing .mkt-callout {
+  margin: 0 0 6px;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.device-app--marketing .mkt-callout strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #c4b5fd;
+}
+
+.device-app--marketing .mkt-heat {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 52px;
+  margin-top: 6px;
+}
+
+.device-app--marketing .mkt-heat__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+}
+
+.device-app--marketing .mkt-heat__bar {
+  width: 100%;
+  margin-top: auto;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(180deg, #fb923c, rgba(251, 146, 60, 0.35));
+  min-height: 2px;
+}
+
+.device-app--marketing .mkt-heat__label {
+  font-size: 0.5rem;
+  color: #64748b;
+  line-height: 1;
+}
+
+.device-app--marketing .mkt-back {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
