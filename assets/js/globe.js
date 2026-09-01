@@ -20,6 +20,10 @@
   const isMobile = window.matchMedia('(max-width: 700px)').matches
     || window.matchMedia('(pointer: coarse)').matches;
   if(hint && isMobile) hint.style.display = 'none';
+  if(isMobile){
+    canvas.style.pointerEvents = 'none';
+    canvas.style.cursor = 'default';
+  }
 
   if(!canvas || !stage) return;
 
@@ -393,6 +397,7 @@
   let hintHidden = false;
   function hideHint(){ if(!hintHidden && hint){ hintHidden = true; hint.style.opacity = '0'; } }
 
+  if(!isMobile){
   canvas.addEventListener('pointerdown', e => {
     dragging = true; lastPX = e.clientX; vel = 0;
     canvas.setPointerCapture(e.pointerId);
@@ -418,4 +423,5 @@
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
   canvas.addEventListener('pointerleave', () => { lensTarget = 0; mx = -1e5; my = -1e5; });
+  }
 })();

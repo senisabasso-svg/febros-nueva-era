@@ -1353,8 +1353,13 @@ footer {
 @media (max-width:700px){
   #bgCanvas{display:none!important}
   .intro-glow{opacity:.4}
-  #globeCanvas{touch-action:none}
-  .globe-drag-hint{display:none} /* hint occupies space; drag still works */
+  #globeCanvas{
+    touch-action: pan-y;
+    pointer-events: none;
+    cursor: default;
+  }
+  #globeCanvas:active { cursor: default; }
+  .globe-drag-hint{display:none}
 }
 
 /* CARDSTACK PERF */
