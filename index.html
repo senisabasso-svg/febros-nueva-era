@@ -10,12 +10,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="/assets/logo-wordmark.png" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;800&family=Poppins:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;800&family=Poppins:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
 
 <link rel="preload" href="/assets/css/main.css" as="style">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/device-demo.css">
 <link rel="stylesheet" href="/assets/css/showcase-demo.css">
+<link rel="stylesheet" href="/assets/css/demo-pelu-login.css">
+<link rel="stylesheet" href="/assets/css/demo-pelu-panel.css">
+<link rel="stylesheet" href="/assets/css/demo-tiendas-login.css">
+<link rel="stylesheet" href="/assets/css/demo-tiendas-panel.css">
 
 
 </head><body>
@@ -31,7 +35,6 @@
   <a href="#inicio" class="nav-logo"><img src="/assets/logo-wordmark.png" fetchpriority="high" decoding="async" alt="FEBROS Software Development" width="333" height="82"></a>
   <ul class="nav-links">
     <li><a href="#sistemas">Sistemas</a></li>
-    <li><a href="#servicios">Servicios</a></li>
     <li><a href="#producto">Producto</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -120,70 +123,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-wrap" id="servicios">
-  <div class="section-eye">
-    <div class="section-tag">Servicios</div>
-    <h2 class="section-title">Hacemos todo esto<br>para que no lo hagas vos</h2>
-  </div>
-  <div class="services">
-    <div class="service">
-      <div class="srv-glow" style="background:#FF7300;"></div>
-      <div class="srv-icon" style="background:rgba(255,115,0,0.10);border-color:rgba(255,115,0,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="3" width="15" height="14" rx="2.5" stroke="#FF7300" stroke-width="1.3"/><path d="M2.5 7.5h15" stroke="#FF7300" stroke-width="1.3"/><path d="M6 11h3M6 14h6" stroke="#FF7300" stroke-width="1.1" stroke-linecap="round"/></svg>
-      </div>
-      <p class="srv-title">Sistema de gestión</p>
-      <p class="srv-body">Controlá todo tu negocio desde un solo lugar.</p>
-      <div class="srv-pill" style="color:#FF7300;border-color:rgba(255,115,0,0.22);background:rgba(255,115,0,0.06)">Clientes • Productos • Ventas • Compras • Reportes</div>
-    </div>
-    <div class="service">
-      <div class="srv-glow" style="background:#FFB25E;"></div>
-      <div class="srv-icon" style="background:rgba(255,178,94,0.10);border-color:rgba(255,178,94,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.2l7 3.6v8.4l-7 3.6-7-3.6V5.8z" stroke="#FFB25E" stroke-width="1.3" stroke-linejoin="round"/><path d="M3 5.8l7 3.6 7-3.6M10 9.4V17.8" stroke="#FFB25E" stroke-width="1.1" stroke-linejoin="round"/></svg>
-      </div>
-      <p class="srv-title">Control de stock</p>
-      <p class="srv-body">Sabé exactamente qué tenés y cuándo reponer.</p>
-      <div class="srv-pill" style="color:#FFB25E;border-color:rgba(255,178,94,0.22);background:rgba(255,178,94,0.06)">Entradas • Salidas • Inventario • Alertas</div>
-    </div>
-    <div class="service">
-      <div class="srv-glow" style="background:#FF7300;"></div>
-      <div class="srv-icon" style="background:rgba(255,115,0,0.10);border-color:rgba(255,115,0,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4.5 2.5h11v15l-2-1.4-1.8 1.4-1.7-1.4-1.8 1.4-1.7-1.4-2 1.4z" stroke="#FF7300" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.5 7h5M7.5 10.5h3" stroke="#FF7300" stroke-width="1.1" stroke-linecap="round"/></svg>
-      </div>
-      <p class="srv-title">Facturación electrónica</p>
-      <p class="srv-body">Facturá fácil, rápido y 100% digital.</p>
-      <div class="srv-pill" style="color:#FF7300;border-color:rgba(255,115,0,0.22);background:rgba(255,115,0,0.06)">Sin papeles • Sin complicaciones • 100% digital</div>
-    </div>
-    <div class="service">
-      <div class="srv-glow" style="background:#F0EEE8;"></div>
-      <div class="srv-icon" style="background:rgba(240,238,232,0.10);border-color:rgba(240,238,232,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.6" stroke="#F0EEE8" stroke-width="1.3"/><path d="M2.6 10h14.8M10 2.4c2 2.2 3 4.9 3 7.6s-1 5.4-3 7.6c-2-2.2-3-4.9-3-7.6s1-5.4 3-7.6z" stroke="#F0EEE8" stroke-width="1.1"/></svg>
-      </div>
-      <p class="srv-title">Páginas web</p>
-      <p class="srv-body">Tu negocio online las 24 horas.</p>
-      <div class="srv-pill" style="color:#F0EEE8;border-color:rgba(240,238,232,0.22);background:rgba(240,238,232,0.06)">Mostrá tus productos • Recibí consultas • Generá confianza</div>
-    </div>
-    <div class="service">
-      <div class="srv-glow" style="background:#FF9538;"></div>
-      <div class="srv-icon" style="background:rgba(255,149,56,0.10);border-color:rgba(255,149,56,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7.4" r="3" stroke="#FF9538" stroke-width="1.3"/><path d="M2.6 17c0-3 2.4-5.2 5.4-5.2s5.4 2.2 5.4 5.2" stroke="#FF9538" stroke-width="1.3" stroke-linecap="round"/><path d="M14 5.2a2.9 2.9 0 0 1 0 5.5M15.6 16.4c0-2-.7-3.6-1.8-4.6" stroke="#FF9538" stroke-width="1.1" stroke-linecap="round" opacity="0.65"/></svg>
-      </div>
-      <p class="srv-title">Gestión de clientes</p>
-      <p class="srv-body">Organizá y fidelizá tus clientes.</p>
-      <div class="srv-pill" style="color:#FF9538;border-color:rgba(255,149,56,0.22);background:rgba(255,149,56,0.06)">Ficha • Historial • Cuenta corriente</div>
-    </div>
-    <div class="service">
-      <div class="srv-glow" style="background:#FFB25E;"></div>
-      <div class="srv-icon" style="background:rgba(255,178,94,0.10);border-color:rgba(255,178,94,0.22);">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17h14" stroke="#FFB25E" stroke-width="1.3" stroke-linecap="round"/><rect x="4.6" y="9" width="2.8" height="5.6" rx="1" fill="#FFB25E" opacity="0.55"/><rect x="9" y="5.6" width="2.8" height="9" rx="1" fill="#FFB25E"/><rect x="13.4" y="11.4" width="2.8" height="3.2" rx="1" fill="#FFB25E" opacity="0.4"/></svg>
-      </div>
-      <p class="srv-title">Reportes</p>
-      <p class="srv-body">Información clara para tomar mejores decisiones.</p>
-      <div class="srv-pill" style="color:#FFB25E;border-color:rgba(255,178,94,0.22);background:rgba(255,178,94,0.06)">Facturación • Ticket promedio • Exportá a Excel</div>
-    </div>
-  </div>
-</section>
-
 
 <!-- SYSTEMS SHOWCASE — unified phone + tab selector -->
 <section class="systems-wrap systems-unified" id="sistemas">
@@ -209,110 +148,275 @@
           <!-- Peluquerías -->
           <div class="device-demo-layer active" data-sys="pelu">
             <div class="device-app device-app--pelu" data-interactive-demo>
-              <div class="device-app-view sdemo-login is-active" data-view="login">
-                <div class="sdemo-login-card">
-                  <p class="sdemo-login-kicker">Gestión de peluquerías</p>
-                  <h2 class="sdemo-login-title">Bienvenido de nuevo</h2>
-                  <p class="sdemo-login-sub">Ingrese sus datos para acceder al salón.</p>
-                  <form>
-                    <div class="sdemo-field">
-                      <label>Correo electrónico</label>
-                      <input type="email" value="verobasso@hotmail.com" autocomplete="off">
+              <div class="device-app-view is-active" data-view="login">
+                <div class="login-split-page">
+                  <div class="login-glass-layers login-glass-layers--static" aria-hidden="true">
+                    <div class="login-glass-blob login-glass-blob--1"></div>
+                    <div class="login-glass-blob login-glass-blob--2"></div>
+                    <div class="login-glass-blob login-glass-blob--3"></div>
+                    <div class="login-glass-blob login-glass-blob--4"></div>
+                    <div class="login-glass-noise"></div>
+                  </div>
+                  <div class="login-split-grid">
+                    <div class="login-split-left">
+                      <header class="login-split-brand">
+                        <span class="login-split-brand-name">Gestión de peluquerías</span>
+                      </header>
+                      <div class="login-split-form-shell">
+                        <div class="login-split-glass-inner">
+                          <h1 class="login-split-title">Bienvenido de nuevo</h1>
+                          <p class="login-split-subtitle">Ingrese sus datos para acceder al salón.</p>
+                          <form class="login-split-form">
+                            <label class="login-split-label">Correo electrónico
+                              <input class="login-split-input" type="email" autocomplete="username" placeholder="nombre@ejemplo.com" value="demo@gmail.com" required>
+                            </label>
+                            <label class="login-split-label">Contraseña
+                              <input class="login-split-input" type="password" autocomplete="current-password" placeholder="••••••••" value="clavedemo" required>
+                            </label>
+                            <div class="login-split-row">
+                              <label class="login-split-check"><input type="checkbox"><span>Recordarme en este equipo</span></label>
+                              <button type="button" class="login-split-link">¿Olvidó su contraseña?</button>
+                            </div>
+                            <button type="submit" class="login-split-submit">Iniciar sesión</button>
+                          </form>
+                          <p class="login-split-foot muted">¿No tiene cuenta? Solicite acceso a quien administra su peluquería.</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="sdemo-field">
-                      <label>Contraseña</label>
-                      <input type="password" value="verobasso123" autocomplete="off">
+                    <div class="login-split-right">
+                      <div class="login-split-right-inner">
+                        <div class="login-split-art" aria-hidden="true">
+                          <img src="/assets/demo/logo-oficial-login.png" alt="demo" class="login-split-art-logo">
+                        </div>
+                        <p class="login-split-tagline">Turnos, stock y cobros en un solo lugar.</p>
+                      </div>
                     </div>
-                    <button class="sdemo-btn" type="submit">Iniciar sesión</button>
-                  </form>
+                  </div>
                 </div>
               </div>
-              <div class="device-app-view sdemo-dash is-hidden" data-view="dash">
-                <header class="sdemo-topbar">
-                  <span class="sdemo-topbar-brand">Veronica Basso</span>
-                </header>
-                <main class="sdemo-main">
-                  <h2>Informes de ventas del salón</h2>
-                  <p style="margin:0 0 8px;color:#64748b;font-size:0.82rem;">KPIs, tendencias y detalle de líneas vendidas.</p>
-                  <div class="sdemo-kpi-grid">
-                    <article class="sdemo-kpi"><span>Facturación</span><strong>$ 12.840</strong></article>
-                    <article class="sdemo-kpi"><span>Ventas cerradas</span><strong>18</strong></article>
-                    <article class="sdemo-kpi"><span>Ticket promedio</span><strong>$ 713</strong></article>
-                    <article class="sdemo-kpi"><span>Clientes</span><strong>42</strong></article>
+              <div class="device-app-view is-hidden" data-view="dash">
+                <div class="app app--with-parallax app--shell">
+                  <aside class="app-sidebar" aria-label="Navegación del salón">
+                    <div class="app-sidebar__brand">
+                      <img src="/assets/demo/logo-oficial-login.png" alt="demo" class="app-sidebar__logo-oficial">
+                      <button type="button" class="app-sidebar__collapse" aria-label="Ocultar menú lateral" title="Ocultar menú">«</button>
+                    </div>
+                    <nav id="tenant-nav" class="nav nav--sidebar" aria-label="Secciones del salón">
+                      <a href="/">Cobro</a>
+                      <a href="/turnos">Turnos</a>
+                      <a class="active" href="/informes" aria-current="page">Informes</a>
+                      <details class="nav-dropdown" open>
+                        <summary class="nav-dropdown__summary">Configuraciones</summary>
+                        <div class="nav-dropdown__panel">
+                          <a href="/productos">Inventario</a>
+                          <a href="/tarifario">Tarifario</a>
+                          <a href="/proveedores">Proveedores</a>
+                          <a href="/clientes">Clientes</a>
+                        </div>
+                      </details>
+                    </nav>
+                    <div class="app-sidebar__foot">
+                      <span class="muted header-user">demo@gmail.com · demo</span>
+                      <button type="button" class="btn btn-secondary">Cerrar sesión</button>
+                    </div>
+                    <div class="app-sidebar__glow" aria-hidden="true"></div>
+                  </aside>
+                  <button type="button" class="header-nav-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
+                  <div class="app-content">
+                    <header class="header header--mobile-bar">
+                      <div class="header-top">
+                        <div class="header-brand">
+                          <img src="/assets/demo/logo-oficial-login.png" alt="demo" class="header-brand-logo">
+                          <h1 class="logo">demo</h1>
+                        </div>
+                        <button type="button" class="header-nav-toggle" aria-label="Mostrar menú lateral" aria-expanded="false" aria-controls="tenant-nav" title="Mostrar menú">
+                          <span class="header-nav-toggle__bar" aria-hidden="true"></span>
+                          <span class="header-nav-toggle__bar" aria-hidden="true"></span>
+                          <span class="header-nav-toggle__bar" aria-hidden="true"></span>
+                        </button>
+                        <div class="header-actions">
+                          <button type="button" class="btn btn-secondary">Cerrar sesión</button>
+                        </div>
+                      </div>
+                    </header>
+                    <main class="main">
+                      <div class="page">
+                        <section class="card">
+                          <h2>Informes de ventas del salón</h2>
+                          <p class="muted" style="margin-top:0.35rem;">Dashboard en tiempo real con KPIs, tendencias y detalle completo de líneas vendidas.</p>
+                          <div class="filter-row">
+                            <label>Día<input type="date" value="2026-08-10"></label>
+                            <label>Mes<input type="month" value="2026-08"></label>
+                            <label>Filtrar por proveedor<select><option value="">Todos</option></select></label>
+                            <button type="button" class="btn btn-secondary">Exportar Excel</button>
+                            <button type="button" class="btn btn-secondary" title="Envía un informe visual (PNG) al correo de tu usuario logueado">Enviar a mail</button>
+                            <button type="button" class="btn btn-secondary">Actualizar</button>
+                          </div>
+                          <div class="informes-kpi-grid">
+                            <article class="informes-kpi-card"><span class="informes-kpi-label">Facturación</span><strong>$&nbsp;4.380,00</strong></article>
+                            <article class="informes-kpi-card"><span class="informes-kpi-label">Ventas cerradas</span><strong>2</strong></article>
+                            <article class="informes-kpi-card"><span class="informes-kpi-label">Ticket promedio</span><strong>$&nbsp;2.190,00</strong></article>
+                            <article class="informes-kpi-card"><span class="informes-kpi-label">Clientes</span><strong>1</strong></article>
+                            <article class="informes-kpi-card"><span class="informes-kpi-label">Proveedores activos</span><strong>0</strong></article>
+                          </div>
+                          <div class="informes-widgets-grid">
+                            <article class="informes-widget">
+                              <h3>Top proveedores</h3>
+                              <ul class="informes-bars">
+                                <li>
+                                  <div class="informes-bars-head"><span>Sin proveedor</span><strong>$&nbsp;4.380,00</strong></div>
+                                  <div class="informes-bar-track"><div class="informes-bar-fill" style="width:100%"></div></div>
+                                </li>
+                              </ul>
+                            </article>
+                            <article class="informes-widget">
+                              <h3>Facturación por día (últimos 7)</h3>
+                              <ul class="informes-bars">
+                                <li>
+                                  <div class="informes-bars-head"><span>6/7</span><strong>$&nbsp;2.650,00</strong></div>
+                                  <div class="informes-bar-track"><div class="informes-bar-fill informes-bar-fill--alt" style="width:100%"></div></div>
+                                </li>
+                                <li>
+                                  <div class="informes-bars-head"><span>9/8</span><strong>$&nbsp;1.730,00</strong></div>
+                                  <div class="informes-bar-track"><div class="informes-bar-fill informes-bar-fill--alt" style="width:65%"></div></div>
+                                </li>
+                              </ul>
+                            </article>
+                            <article class="informes-widget">
+                              <h3>Composición de líneas</h3>
+                              <ul class="informes-metrics-list">
+                                <li><span>Servicios</span><strong>5</strong></li>
+                                <li><span>Productos</span><strong>0</strong></li>
+                                <li><span>Total líneas</span><strong>5</strong></li>
+                              </ul>
+                              <h4 class="informes-widget-subtitle">Top categorías</h4>
+                              <ul class="informes-tags">
+                                <li><span>demoproducto</span><strong>$&nbsp;4.380,00</strong></li>
+                              </ul>
+                            </article>
+                          </div>
+                          <div class="table-wrap" style="margin-top:1rem">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Venta</th><th>Fecha</th><th>Cliente</th><th>Tel. cliente</th><th>Tipo</th><th>Artículo</th><th>Categoría</th><th>Marca</th><th>Color</th><th>P. unit.</th><th>Proveedor</th><th>Teléfono prov.</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
+                                <tr><td>22</td><td>10/8/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;980,00</td><td>—</td><td>—</td></tr>
+                                <tr><td>18</td><td>7/7/2026</td><td>demo</td><td>demo</td><td>Servicio</td><td>demoproducto</td><td>demoproducto</td><td>—</td><td>—</td><td>$&nbsp;750,00</td><td>—</td><td>—</td></tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </section>
+                        <button type="button" class="demo-back" data-action="back-login">← Volver al login</button>
+                      </div>
+                    </main>
                   </div>
-                  <div class="sdemo-widget">
-                    <h3>Top categorías</h3>
-                    <ul class="sdemo-bars">
-                      <li>
-                        <div class="sdemo-bars-head"><span>Cortes dama</span><strong>$ 8.240</strong></div>
-                        <div class="sdemo-bar-track"><div class="sdemo-bar-fill" style="width:100%"></div></div>
-                      </li>
-                      <li>
-                        <div class="sdemo-bars-head"><span>Coloración</span><strong>$ 3.120</strong></div>
-                        <div class="sdemo-bar-track"><div class="sdemo-bar-fill" style="width:38%"></div></div>
-                      </li>
-                    </ul>
-                  </div>
-                  <table class="sdemo-mini-table">
-                    <thead><tr><th>Venta</th><th>Cliente</th><th>Artículo</th><th>Total</th></tr></thead>
-                    <tbody>
-                      <tr><td>28</td><td>María L.</td><td>Corte + brushing</td><td>$ 980</td></tr>
-                      <tr><td>27</td><td>Lucía P.</td><td>Balayage</td><td>$ 2.450</td></tr>
-                      <tr><td>26</td><td>Ana R.</td><td>Corte clásico</td><td>$ 750</td></tr>
-                    </tbody>
-                  </table>
-                  <button type="button" class="sdemo-back" data-action="back-login">← Volver al login</button>
-                </main>
+                </div>
               </div>
             </div>
           </div>
           <!-- Tiendas -->
           <div class="device-demo-layer" data-sys="sh">
             <div class="device-app device-app--tiendas" data-interactive-demo>
-              <div class="device-app-view sdemo-login is-active" data-view="login">
-                <div class="sdemo-login-card">
-                  <div class="sdemo-login-logo"><span>Tiendas</span></div>
-                  <p class="sdemo-login-sub">Inicie sesión para continuar</p>
-                  <form>
-                    <div class="sdemo-field">
-                      <label>Correo electrónico</label>
-                      <input type="email" value="benja@gmail.com" autocomplete="off">
+              <div class="device-app-view is-active" data-view="login">
+                <div class="page login-page">
+                  <section class="card login-card">
+                    <div class="login-brand">
+                      <video class="login-logo-video" poster="/assets/logo-wordmark.png" autoplay loop playsinline muted aria-label="Logo Tiendas"></video>
+                      <h1 class="logo" style="margin:0">Tiendas</h1>
                     </div>
-                    <div class="sdemo-field">
-                      <label>Contraseña</label>
-                      <input type="password" value="tienda2024" autocomplete="off">
-                    </div>
-                    <button class="sdemo-btn" type="submit">Iniciar sesión</button>
-                  </form>
+                    <p class="muted" style="text-align:center">Inicie sesión para continuar</p>
+                    <form class="form-grid" style="max-width:360px">
+                      <label>Correo electrónico
+                        <input type="email" autocomplete="username" value="demo@gmail.com" required>
+                      </label>
+                      <label>Contraseña
+                        <input type="password" autocomplete="current-password" value="clavedemo" required>
+                      </label>
+                      <button type="submit" class="btn btn-accent">Iniciar sesión</button>
+                    </form>
+                  </section>
                 </div>
               </div>
-              <div class="device-app-view sdemo-dash is-hidden" data-view="dash">
-                <header class="sdemo-topbar">
-                  <span class="sdemo-topbar-brand">benja</span>
-                </header>
-                <main class="sdemo-main">
-                  <h2>Vivo TikTok</h2>
-                  <button type="button" class="sdemo-accent-btn">Empezar vivo</button>
-                  <div class="sdemo-card">
-                    <h3>Historial</h3>
-                    <div class="sdemo-table-wrap">
-                      <table class="sdemo-table">
-                        <thead><tr><th>#</th><th>Fecha</th><th>Dur.</th><th>Res.</th><th>$</th></tr></thead>
-                        <tbody>
-                          <tr><td>12</td><td>1/9</td><td>45m</td><td>12</td><td>$ 4.200</td></tr>
-                          <tr><td>11</td><td>28/8</td><td>38m</td><td>9</td><td>$ 3.150</td></tr>
-                          <tr><td>10</td><td>25/8</td><td>52m</td><td>15</td><td>$ 5.800</td></tr>
-                          <tr><td>9</td><td>22/8</td><td>31m</td><td>7</td><td>$ 2.400</td></tr>
-                        </tbody>
-                      </table>
+              <div class="device-app-view is-hidden" data-view="dash">
+                <div class="app">
+                  <header class="header">
+                    <div style="display:flex;align-items:center;gap:0.5rem">
+                      <h1 class="logo">demo</h1>
                     </div>
-                  </div>
-                  <div class="sdemo-kpi-grid">
-                    <article class="sdemo-kpi"><span>Ventas hoy</span><strong>$ 1.280</strong></article>
-                    <article class="sdemo-kpi"><span>Prendas activas</span><strong>186</strong></article>
-                  </div>
-                  <button type="button" class="sdemo-back" data-action="back-login">← Volver al login</button>
-                </main>
+                    <nav class="nav">
+                      <a class="" href="/">Venta</a>
+                      <a class="" href="/productos">Productos</a>
+                      <a class="" href="/proveedores">Proveedores</a>
+                      <a class="" href="/clientes">Clientes</a>
+                      <a class="" href="/cuentas-corrientes">Cuentas corrientes</a>
+                      <a class="" href="/informes">Informes</a>
+                      <a class="" href="/web-vistas">Web vistas</a>
+                      <a class="active" href="/vivo" aria-current="page">Vivo TikTok</a>
+                    </nav>
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+                      <span class="muted" style="font-size:0.85rem">demo@gmail.com · demo</span>
+                      <button type="button" class="btn btn-secondary">Cerrar sesión</button>
+                    </div>
+                  </header>
+                  <main class="main">
+                    <div class="page vivo-wrap">
+                      <h2>Vivo TikTok</h2>
+                      <button type="button" class="btn btn-accent vivo-start-btn">Empezar vivo</button>
+                      <section class="card" style="margin-top:1rem">
+                        <h3>Historial</h3>
+                        <div class="table-wrap">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Vivo #</th>
+                                <th>Fecha</th>
+                                <th>Duración</th>
+                                <th>Mostradas</th>
+                                <th>Reservas</th>
+                                <th>Adjudicado</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>8</td>
+                                <td>31/8/2026</td>
+                                <td>0m</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>$800</td>
+                                <td><a class="btn btn-ghost" href="/vivo/8/cierre">Cierre</a></td>
+                              </tr>
+                              <tr>
+                                <td>7</td>
+                                <td>31/8/2026</td>
+                                <td>0m</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>$800</td>
+                                <td><a class="btn btn-ghost" href="/vivo/7/cierre">Cierre</a></td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>31/8/2026</td>
+                                <td>1m</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>$0</td>
+                                <td><a class="btn btn-ghost" href="/vivo/6/cierre">Cierre</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                      <button type="button" class="demo-back" data-action="back-login">← Volver al login</button>
+                    </div>
+                  </main>
+                </div>
               </div>
             </div>
           </div>
@@ -322,18 +426,18 @@
               <div class="device-app-view da-login is-active" data-view="login">
                 <div class="da-login-card">
                   <div class="da-login-brand">
-                    <img src="/assets/logo-wordmark.png" alt="FEBROS" width="120" height="30">
+                    <img src="/assets/logo-wordmark.png" alt="demo" width="120" height="30">
                     <h2 class="da-login-title">Gestión</h2>
                   </div>
                   <p class="da-login-sub">Accedé a tu panel de gestión</p>
                   <form>
                     <div class="da-field">
                       <label>Email</label>
-                      <input type="email" value="admin@gmail.com" autocomplete="off">
+                      <input type="email" value="demo@gmail.com" autocomplete="off">
                     </div>
                     <div class="da-field">
                       <label>Contraseña</label>
-                      <input type="password" value="demo1234" autocomplete="off">
+                      <input type="password" value="clavedemo" autocomplete="off">
                     </div>
                     <button class="da-btn-login" type="submit">Ingresar</button>
                   </form>
@@ -344,7 +448,7 @@
                   <button type="button" class="da-menu-btn" aria-label="Menú">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
                   </button>
-                  <span class="da-topbar-brand">Club FEBROS</span>
+                  <span class="da-topbar-brand">demo</span>
                 </header>
                 <main class="da-main">
                   <div class="da-page-header">

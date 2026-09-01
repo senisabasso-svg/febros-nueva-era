@@ -11,7 +11,7 @@
     || window.matchMedia('(pointer: coarse)').matches;
 
   const ALL = [
-    { shot:'/assets/cards/card-0.jpg', kicker:'Web del salón', name:'Veronica Basso', chip:'Diseño + desarrollo', accent:'#FF9538' },
+    { shot:'/assets/cards/card-0.jpg', kicker:'Web del salón', name:'demo', chip:'Diseño + desarrollo', accent:'#FF9538' },
     { shot:'/assets/cards/card-1.jpg', kicker:'Agenda online', name:'Reservá tu turno', chip:'Sin llamadas', accent:'#C9992E' },
     { shot:'/assets/cards/card-2.jpg', kicker:'Servicios y precios', name:'Cargados por el salón', chip:'Se cobran solos', accent:'#C9992E' },
     { shot:'/assets/cards/card-3.jpg', kicker:'Galería del salón', name:'Fotos del lugar real', chip:'Parte de la web', accent:'#FF9538' },

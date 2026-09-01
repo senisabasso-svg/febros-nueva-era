@@ -1,0 +1,142 @@
+/* Tiendas login — scoped replica of production markup */
+.device-app--tiendas {
+  --book-bg: #fff5f8;
+  --book-card: #ffffff;
+  --book-text: #1a1a2e;
+  --book-muted: #6b7280;
+  --book-accent: #ff58a8;
+  --book-accent-dark: #e91e8c;
+  --book-logo: #8b1538;
+  --book-border: #e8d5de;
+  --book-radius: 14px;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--book-text);
+  background: var(--book-bg);
+}
+
+.device-app--tiendas .device-app-view[data-view="login"] {
+  display: block;
+  overflow: hidden auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.device-app--tiendas .page.login-page {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px 14px;
+  background: var(--book-bg);
+  box-sizing: border-box;
+}
+
+.device-app--tiendas .card.login-card {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 16px 14px 14px;
+  background: var(--book-card);
+  border: 1px solid rgba(255, 88, 168, 0.12);
+  border-radius: var(--book-radius);
+  box-shadow:
+    0 10px 28px rgba(139, 21, 56, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.device-app--tiendas .login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.device-app--tiendas .login-logo-video {
+  display: block;
+  width: min(100%, 118px);
+  height: 42px;
+  margin: 0 auto;
+  object-fit: contain;
+  background: url(/assets/logo-wordmark.png) center / contain no-repeat;
+}
+
+.device-app--tiendas .logo {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--book-logo);
+  text-align: center;
+}
+
+.device-app--tiendas .muted {
+  margin: 0 0 12px;
+  color: var(--book-muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.device-app--tiendas .form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.device-app--tiendas .form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.device-app--tiendas .form-grid input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  border: 1px solid var(--book-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--book-text);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.device-app--tiendas .form-grid input:focus {
+  outline: none;
+  border-color: var(--book-accent);
+  box-shadow: 0 0 0 3px rgba(255, 88, 168, 0.18);
+}
+
+.device-app--tiendas .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.15s;
+}
+
+.device-app--tiendas .btn-accent {
+  width: 100%;
+  margin-top: 2px;
+  padding: 9px 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(180deg, #ff6eb8 0%, var(--book-accent) 55%, var(--book-accent-dark) 100%);
+  box-shadow: 0 4px 14px rgba(255, 88, 168, 0.35);
+}
+
+.device-app--tiendas .btn-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 88, 168, 0.42);
+}

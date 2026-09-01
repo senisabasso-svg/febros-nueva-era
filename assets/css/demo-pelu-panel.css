@@ -1,0 +1,530 @@
+/* Peluquerías app panel — replica of production layout (scoped to phone mockup) */
+.device-app--pelu {
+  --pelu-bg: #0e141c;
+  --pelu-card: #1c222e;
+  --pelu-text: #f1f5f9;
+  --pelu-muted: #94a3b8;
+  --pelu-accent: #c9a24f;
+  --pelu-accent-dark: #a67f2e;
+  --pelu-border: rgba(201, 162, 79, 0.28);
+  --pelu-border-input: rgba(148, 163, 184, 0.35);
+  --pelu-radius-sm: 8px;
+  --touch-min: 36px;
+}
+
+.device-app--pelu:has([data-view="dash"].is-active) {
+  background: var(--pelu-bg);
+  color: var(--pelu-text);
+}
+
+.device-app--pelu [data-view="dash"] {
+  display: block;
+  overflow: hidden;
+}
+
+.device-app--pelu [data-view="dash"] .app {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  line-height: 1.45;
+  background: var(--pelu-bg);
+  color: var(--pelu-text);
+  overflow: hidden;
+}
+
+.device-app--pelu [data-view="dash"] .app--shell {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* ── Sidebar drawer ── */
+.device-app--pelu .app-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: min(78%, 220px);
+  height: 100%;
+  padding: 34px 10px 12px;
+  background: #0e141cfa;
+  border-right: 1px solid var(--pelu-border);
+  box-shadow: 8px 0 32px #00000073;
+  transform: translateX(-100%);
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.device-app--pelu .app--nav-open .app-sidebar {
+  transform: translateX(0);
+}
+
+.device-app--pelu .app-sidebar__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0 0 0.65rem;
+  border-bottom: 1px solid rgba(201, 162, 79, 0.16);
+}
+
+.device-app--pelu .app-sidebar__logo-oficial {
+  width: 100%;
+  height: auto;
+  max-height: 52px;
+  object-fit: contain;
+}
+
+.device-app--pelu .app-sidebar__collapse {
+  align-self: flex-end;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--pelu-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--pelu-accent);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.device-app--pelu .nav--sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.device-app--pelu .nav--sidebar a,
+.device-app--pelu .nav--sidebar .nav-dropdown__summary {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--pelu-radius-sm);
+  border: 1px solid transparent;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--pelu-text);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+}
+
+.device-app--pelu .nav--sidebar a.active {
+  border-color: rgba(201, 162, 79, 0.45);
+  background: rgba(201, 162, 79, 0.12);
+  color: var(--pelu-accent);
+  box-shadow: 0 0 12px rgba(201, 162, 79, 0.18);
+}
+
+.device-app--pelu .nav-dropdown {
+  width: 100%;
+}
+
+.device-app--pelu .nav-dropdown__summary {
+  list-style: none;
+}
+
+.device-app--pelu .nav-dropdown__summary::-webkit-details-marker {
+  display: none;
+}
+
+.device-app--pelu .nav-dropdown__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+}
+
+.device-app--pelu .nav-dropdown__panel a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--pelu-muted);
+}
+
+.device-app--pelu .app-sidebar__foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(201, 162, 79, 0.12);
+}
+
+.device-app--pelu .app-sidebar__foot .header-user {
+  font-size: 0.65rem;
+  color: var(--pelu-muted);
+  line-height: 1.35;
+}
+
+.device-app--pelu .app-sidebar__glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(0deg, rgba(201, 162, 79, 0.08), transparent);
+  pointer-events: none;
+}
+
+/* Backdrop */
+.device-app--pelu .header-nav-backdrop {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: #0f172a73;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  cursor: pointer;
+}
+
+.device-app--pelu .app--nav-open .header-nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Main content area ── */
+.device-app--pelu .app-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.device-app--pelu .header--mobile-bar {
+  flex: none;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #121820f2;
+  border-bottom: 1px solid rgba(201, 162, 79, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.device-app--pelu .header-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 34px 8px 8px;
+}
+
+.device-app--pelu .header-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
+.device-app--pelu .header-brand-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.device-app--pelu .header-brand .logo {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--pelu-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.device-app--pelu .header-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid rgba(201, 162, 79, 0.95);
+  border-radius: 8px;
+  background: #1c222ee6;
+  cursor: pointer;
+}
+
+.device-app--pelu .header-nav-toggle__bar {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.device-app--pelu .header--nav-open .header-nav-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.device-app--pelu .header--nav-open .header-nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.device-app--pelu .header--nav-open .header-nav-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.device-app--pelu .header-actions {
+  display: none;
+}
+
+.device-app--pelu .main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.device-app--pelu .card {
+  background: linear-gradient(180deg, #1c222eeb, #121820e0);
+  border: 1px solid rgba(201, 162, 79, 0.35);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 18px #00000040;
+}
+
+.device-app--pelu .card h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pelu-accent);
+}
+
+.device-app--pelu .muted {
+  color: var(--pelu-muted);
+  font-size: 0.72rem;
+}
+
+.device-app--pelu .filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-end;
+  margin: 8px 0;
+}
+
+.device-app--pelu .filter-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--pelu-muted);
+  flex: 1 1 70px;
+  min-width: 0;
+}
+
+.device-app--pelu .filter-row input,
+.device-app--pelu .filter-row select {
+  padding: 4px 6px;
+  border-radius: var(--pelu-radius-sm);
+  border: 1px solid var(--pelu-border-input);
+  font-family: inherit;
+  font-size: 0.68rem;
+  color: var(--pelu-text);
+  background: #0e141cb8;
+}
+
+.device-app--pelu .informes-kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.device-app--pelu .informes-kpi-card {
+  border: 1px solid rgba(201, 162, 79, 0.35);
+  border-radius: 10px;
+  padding: 7px 8px;
+  background: linear-gradient(180deg, #1c222eeb, #121820e0);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.device-app--pelu .informes-kpi-label {
+  font-size: 0.62rem;
+  color: var(--pelu-muted);
+}
+
+.device-app--pelu .informes-kpi-card strong {
+  font-size: 0.82rem;
+  color: var(--pelu-accent);
+}
+
+.device-app--pelu .informes-widgets-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.device-app--pelu .informes-widget {
+  border: 1px solid rgba(201, 162, 79, 0.35);
+  border-radius: 10px;
+  background: #1c222ee6;
+  padding: 8px;
+}
+
+.device-app--pelu .informes-widget h3 {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  color: var(--pelu-accent);
+}
+
+.device-app--pelu .informes-widget-subtitle {
+  margin: 8px 0 4px;
+  font-size: 0.7rem;
+  color: var(--pelu-muted);
+  font-weight: 600;
+}
+
+.device-app--pelu .informes-bars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.device-app--pelu .informes-bars-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 0.66rem;
+  margin-bottom: 2px;
+}
+
+.device-app--pelu .informes-bars-head strong {
+  color: var(--pelu-accent);
+  font-size: 0.64rem;
+  white-space: nowrap;
+}
+
+.device-app--pelu .informes-bar-track {
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(148, 163, 184, 0.2);
+  overflow: hidden;
+}
+
+.device-app--pelu .informes-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--pelu-accent-dark), var(--pelu-accent));
+}
+
+.device-app--pelu .informes-bar-fill--alt {
+  background: linear-gradient(90deg, #8b6914, #e8c56a);
+}
+
+.device-app--pelu .informes-metrics-list,
+.device-app--pelu .informes-tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.device-app--pelu .informes-metrics-list li,
+.device-app--pelu .informes-tags li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.66rem;
+}
+
+.device-app--pelu .informes-metrics-list strong,
+.device-app--pelu .informes-tags strong {
+  color: var(--pelu-accent);
+}
+
+.device-app--pelu .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.device-app--pelu table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.58rem;
+}
+
+.device-app--pelu table th,
+.device-app--pelu table td {
+  padding: 4px 3px;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 162, 79, 0.15);
+  white-space: nowrap;
+}
+
+.device-app--pelu table th {
+  color: var(--pelu-accent);
+  font-weight: 700;
+}
+
+.device-app--pelu .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--pelu-radius-sm);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.device-app--pelu .btn-secondary {
+  padding: 4px 7px;
+  font-size: 0.62rem;
+  color: var(--pelu-text);
+  background: #1c222ee6;
+  border: 1px solid var(--pelu-border);
+}
+
+.device-app--pelu .filter-row .btn-secondary {
+  flex: 1 1 auto;
+  font-size: 0.6rem;
+  padding: 5px 6px;
+}
+
+.device-app--pelu .demo-back {
+  margin-top: 10px;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid var(--pelu-border);
+  border-radius: var(--pelu-radius-sm);
+  background: #1c222ee6;
+  color: var(--pelu-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
