@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="/assets/logo-wordmark.png" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700;800&family=Poppins:wght@300;400;500&display=swap">
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -213,7 +213,7 @@ h1 {
   font-family: 'Libre Franklin', sans-serif;
   /* sized so the longest line ("Está desordenado.") clears the content column */
   font-size: clamp(2.15rem, 5.5vw, 4.15rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.03;
   letter-spacing: -0.03em;
   text-wrap: balance;
@@ -491,7 +491,7 @@ h1 {
 }
 .line-kicker {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -689,7 +689,7 @@ footer {
 .foot-tag b {
   display: block;
   color: var(--orange);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.04em;
 }
 .foot-r {
@@ -1331,7 +1331,7 @@ footer {
 .sys-thumbs button{flex:none;border:2px solid transparent;border-radius:10px;padding:0;background:none;cursor:pointer;opacity:.55;transition:.2s;}
 .sys-thumbs button.active,.sys-thumbs button:hover{opacity:1;border-color:rgba(255,115,0,.55);}
 .sys-thumbs img{width:88px;height:56px;object-fit:cover;object-position:top;border-radius:8px;display:block;}
-.sys-kicker{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+.sys-kicker{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
 .sys-panel h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--text);margin:0 0 12px;letter-spacing:-.02em;}
 .sys-lead{color:var(--text2);font-size:1.02rem;line-height:1.55;margin:0 0 20px;max-width:46ch;}
 .sys-feats{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:10px;}
@@ -1359,6 +1359,17 @@ footer {
   .hero-reveal{animation:none!important;opacity:1!important;transform:none!important}
 }
 @media (max-width:700px){ #bgCanvas{opacity:.16} }
+
+/* PERF2 */
+#bgCanvas,#globeCanvas{contain:strict; transform:translateZ(0);}
+.marquee-wrap{contain:content;}
+.feat-card{contain:layout paint;}
+.sys-visual{contain:content;}
+@media (max-width:700px){
+  #globeCanvas,.globe-drag-hint{display:none!important}
+  #bgCanvas{display:none!important}
+  .intro-glow{opacity:.35}
+}
 </style>
 
 </head><body>
@@ -1772,11 +1783,17 @@ footer {
 ══════════════════════════════════════ */
 (function(){
   const canvas = document.getElementById('bgCanvas');
+  /* MOBILE_SKIP_NET */
+  if(!canvas) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 700px), (prefers-reduced-data: reduce)').matches){
+    canvas.style.display = 'none';
+    return;
+  }
   const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true }) || canvas.getContext('2d');
   let W, H, nodes = [], raf;
 
-  const NODE_COUNT = window.innerWidth < 700 ? 16 : 26;
-  const MAX_DIST   = window.innerWidth < 700 ? 100 : 120;
+  const NODE_COUNT = 18;
+  const MAX_DIST   = 110;
   const ORANGE     = [249, 115, 22];
   const AMBER      = [251, 189, 58];
 
@@ -2022,8 +2039,14 @@ footer {
     });
   }
 
-  window.addEventListener('scroll', render, { passive: true });
-  window.addEventListener('resize', render);
+  let scrollScheduled = false;
+  function onScroll(){
+    if(scrollScheduled) return;
+    scrollScheduled = true;
+    requestAnimationFrame(() => { scrollScheduled = false; render(); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   render();
 
   /* cursor tilt with spring damping — not wired straight to the pointer */
@@ -2115,6 +2138,16 @@ footer {
   const canvas = document.getElementById('globeCanvas');
   const stage  = document.getElementById('globeStage');
   const hint   = document.getElementById('globeHint');
+  /* MOBILE_SKIP_GLOBE */
+  if(!canvas || !stage) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isNarrow = window.matchMedia('(max-width: 700px)').matches;
+  if(reduceMotion || isNarrow){
+    canvas.style.display = 'none';
+    if(hint) hint.style.display = 'none';
+    return;
+  }
+
   if(!canvas || !stage) return;
 
   const ctx = canvas.getContext('2d', { alpha: true });
@@ -2140,8 +2173,8 @@ footer {
 
   /* the disc area grows with R², so the cloud grows with it or the
      continents read as scattered dots instead of landmass */
-  const TARGET     = window.innerWidth < 620 ? 2200 : (window.innerWidth < 1000 ? 3200 : 4200);
-  const CANDIDATES = window.innerWidth < 620 ? 12000 : 18000;
+  const TARGET     = window.innerWidth < 1000 ? 1600 : 2800;
+  const CANDIDATES = window.innerWidth < 1000 ? 9000 : 14000;
   const GOLDEN = Math.PI * (3 - Math.sqrt(5));
 
   const P = [];
@@ -2545,6 +2578,17 @@ footer {
     });
   }, { threshold: 0.35 });
   io.observe(v);
+})();
+
+
+/* MARQUEE_PAUSE */
+(function(){
+  const track = document.querySelector('.marquee-track');
+  if(!track) return;
+  const io = new IntersectionObserver(([e]) => {
+    track.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';
+  }, { threshold: 0 });
+  io.observe(track);
 })();
 
 </script>
