@@ -1366,9 +1366,10 @@ footer {
 .feat-card{contain:layout paint;}
 .sys-visual{contain:content;}
 @media (max-width:700px){
-  #globeCanvas,.globe-drag-hint{display:none!important}
   #bgCanvas{display:none!important}
-  .intro-glow{opacity:.35}
+  .intro-glow{opacity:.4}
+  #globeCanvas{touch-action:none}
+  .globe-drag-hint{display:none} /* hint occupies space; drag still works */
 }
 </style>
 
@@ -2138,15 +2139,16 @@ footer {
   const canvas = document.getElementById('globeCanvas');
   const stage  = document.getElementById('globeStage');
   const hint   = document.getElementById('globeHint');
-  /* MOBILE_SKIP_GLOBE */
+  /* MOBILE_GLOBE_LIGHT */
   if(!canvas || !stage) return;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isNarrow = window.matchMedia('(max-width: 700px)').matches;
-  if(reduceMotion || isNarrow){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     canvas.style.display = 'none';
     if(hint) hint.style.display = 'none';
     return;
   }
+  const isMobile = window.matchMedia('(max-width: 700px)').matches
+    || window.matchMedia('(pointer: coarse)').matches;
+  if(hint && isMobile) hint.style.display = 'none';
 
   if(!canvas || !stage) return;
 
@@ -2173,8 +2175,9 @@ footer {
 
   /* the disc area grows with R², so the cloud grows with it or the
      continents read as scattered dots instead of landmass */
-  const TARGET     = window.innerWidth < 1000 ? 1600 : 2800;
-  const CANDIDATES = window.innerWidth < 1000 ? 9000 : 14000;
+  /* mobile: few dots, still readable landmass; desktop stays moderate */
+  const TARGET     = isMobile ? 750 : (window.innerWidth < 1100 ? 1800 : 2600);
+  const CANDIDATES = isMobile ? 4200 : (window.innerWidth < 1100 ? 10000 : 14000);
   const GOLDEN = Math.PI * (3 - Math.sqrt(5));
 
   const P = [];
@@ -2262,7 +2265,7 @@ footer {
   function resize(){
     const rect = canvas.getBoundingClientRect();
     if(!rect.width) return;
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 1.35);
     W = rect.width; H = rect.height;
     canvas.width  = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
@@ -2291,6 +2294,11 @@ footer {
   let lastTime = performance.now();
 
   function frame(now){
+    /* GLOBE_FRAME_THROTTLE */
+    if(isMobile){
+      frame._t = (frame._t|0) + 1;
+      if((frame._t & 1) === 1){ if(running) requestAnimationFrame(frame); return; }
+    }
     const dt = Math.min(0.05, (now - lastTime) / 1000);
     lastTime = now;
     if(started && intro < 1) intro = Math.min(1, (now - startT) / INTRO_MS);
@@ -2496,7 +2504,7 @@ footer {
       });
     }
 
-    if(running) requestAnimationFrame(frame);
+    if(running) requestAnimationFrame(frame); /* GLOBE_FRAME_THROTTLE */
   }
 
   /* three other rAF loops share this page — don't burn frames off-screen */
