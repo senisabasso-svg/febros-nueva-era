@@ -1,0 +1,457 @@
+/* Unified systems — one big phone, switchable demos */
+.device-demo-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.device-demo-layer.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.device-demo-layer .device-app {
+  position: absolute;
+  inset: 0;
+}
+
+.systems-unified {
+  max-width: 1080px;
+  padding-bottom: 110px;
+}
+
+.systems-unified .sys-unified-inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.systems-unified .device-wrap {
+  flex-direction: column;
+  align-items: center;
+}
+
+.systems-unified .sys-demo-hint {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.systems-unified .sys-demo-hint b {
+  color: var(--text2);
+  font-weight: 500;
+}
+
+.sys-copy-wrap {
+  position: relative;
+}
+
+.sys-copy-wrap > .section-tag {
+  margin-bottom: 12px;
+}
+
+.sys-unified-title {
+  margin-bottom: 20px;
+}
+
+.sys-copy-wrap .sys-panel {
+  display: none;
+}
+
+.sys-copy-wrap .sys-panel.active {
+  display: block;
+  animation: sysIn 0.45s ease;
+}
+
+.sys-copy-wrap .sys-panel h3 {
+  margin-top: 0;
+}
+
+.sys-unified-list {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sr-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.systems-unified--gold .sys-tab.active {
+  color: #fff;
+  background: rgba(201, 153, 46, 0.18);
+  border-color: rgba(201, 153, 46, 0.5);
+}
+
+@media (max-width: 900px) {
+  .systems-unified .sys-unified-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ── Peluquerías theme ── */
+.device-app--pelu .sdemo-login {
+  background: linear-gradient(155deg, #1a1208 0%, #2a1f0e 40%, #1c150a 100%);
+  padding: 30px 12px 12px;
+}
+
+.device-app--pelu .sdemo-login-card {
+  width: 100%;
+  background: rgba(255, 252, 245, 0.94);
+  border: 1px solid rgba(201, 153, 46, 0.35);
+  border-radius: 14px;
+  padding: 14px 12px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.device-app--pelu .sdemo-login-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a7b2e;
+  margin: 0 0 6px;
+}
+
+.device-app--pelu .sdemo-login-title {
+  margin: 0 0 4px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2a1f0e;
+}
+
+.device-app--pelu .sdemo-login-sub {
+  margin: 0 0 12px;
+  color: #6b5a3a;
+  font-size: 0.85rem;
+}
+
+.device-app--pelu .sdemo-btn {
+  background: linear-gradient(135deg, #c9992e, #a67c1a);
+  color: #fff;
+}
+
+.device-app--pelu .sdemo-topbar {
+  background: linear-gradient(135deg, #2a1f0e, #4a3820);
+}
+
+.device-app--pelu .sdemo-kpi strong {
+  color: #8b6914;
+}
+
+.device-app--pelu .sdemo-bar-fill {
+  background: linear-gradient(90deg, #c9992e, #e8c56a);
+}
+
+/* ── Tiendas theme ── */
+.device-app--tiendas {
+  background: #111318;
+  color: #e8eaef;
+}
+
+.device-app--tiendas .sdemo-login {
+  align-items: center;
+  justify-content: center;
+  padding: 30px 12px 12px;
+  background: radial-gradient(circle at 50% 0%, #1e2433 0%, #111318 55%);
+}
+
+.device-app--tiendas .sdemo-login-card {
+  width: 100%;
+  background: #1a1f2b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 12px 12px;
+}
+
+.device-app--tiendas .sdemo-login-logo {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.device-app--tiendas .sdemo-login-logo span {
+  display: inline-block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ff8a4c, #ff5e62);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.device-app--tiendas .sdemo-login-sub {
+  margin: 0 0 12px;
+  text-align: center;
+  color: #8b93a7;
+  font-size: 0.85rem;
+}
+
+.device-app--tiendas .sdemo-field label {
+  color: #b8bfd0;
+}
+
+.device-app--tiendas .sdemo-field input {
+  background: #0f131c;
+  border-color: #2d3548;
+  color: #e8eaef;
+}
+
+.device-app--tiendas .sdemo-btn {
+  background: linear-gradient(135deg, #ff8a4c, #ff5e62);
+  color: #fff;
+}
+
+.device-app--tiendas .sdemo-dash {
+  background: #0f131c;
+  color: #e8eaef;
+}
+
+.device-app--tiendas .sdemo-topbar {
+  background: #1a1f2b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.device-app--tiendas .sdemo-main h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.device-app--tiendas .sdemo-accent-btn {
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff8a4c, #ff5e62);
+  color: #fff;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.device-app--tiendas .sdemo-card {
+  background: #1a1f2b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.device-app--tiendas .sdemo-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+}
+
+.device-app--tiendas .sdemo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.device-app--tiendas .sdemo-table th,
+.device-app--tiendas .sdemo-table td {
+  padding: 5px 4px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.device-app--tiendas .sdemo-table th {
+  color: #8b93a7;
+  font-weight: 500;
+}
+
+.device-app--tiendas .sdemo-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Shared showcase form bits */
+.sdemo-login {
+  align-items: center;
+  justify-content: center;
+}
+
+.sdemo-field {
+  margin-bottom: 8px;
+}
+
+.sdemo-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.sdemo-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.sdemo-btn {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sdemo-dash {
+  background: #f4f6f9;
+  color: #0f172a;
+}
+
+.sdemo-topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 10px 8px;
+  color: #fff;
+}
+
+.sdemo-topbar-brand {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.sdemo-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 8px 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sdemo-kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.sdemo-kpi {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.device-app--tiendas .sdemo-kpi {
+  background: #1a1f2b;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.sdemo-kpi span {
+  display: block;
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-bottom: 3px;
+}
+
+.device-app--tiendas .sdemo-kpi span {
+  color: #8b93a7;
+}
+
+.sdemo-kpi strong {
+  font-size: 0.95rem;
+}
+
+.sdemo-widget {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.sdemo-widget h3 {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+}
+
+.sdemo-bars li {
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+.sdemo-bars-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  margin-bottom: 3px;
+}
+
+.sdemo-bar-track {
+  height: 5px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.sdemo-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: #c9992e;
+}
+
+.sdemo-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.68rem;
+}
+
+.sdemo-mini-table th,
+.sdemo-mini-table td {
+  padding: 4px 3px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sdemo-mini-table th {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.sdemo-back {
+  margin-top: 8px;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #475569;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.device-app--tiendas .sdemo-back {
+  background: #1a1f2b;
+  border-color: #2d3548;
+  color: #b8bfd0;
+}

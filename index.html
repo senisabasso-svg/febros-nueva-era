@@ -15,6 +15,7 @@
 <link rel="preload" href="/assets/css/main.css" as="style">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/device-demo.css">
+<link rel="stylesheet" href="/assets/css/showcase-demo.css">
 
 
 </head><body>
@@ -184,24 +185,208 @@
 </section>
 
 
-<!-- SYSTEMS SHOWCASE -->
-<section class="systems-wrap" id="sistemas">
+<!-- SYSTEMS SHOWCASE — unified phone + tab selector -->
+<section class="systems-wrap systems-unified" id="sistemas">
+  <span id="producto" class="sr-anchor" aria-hidden="true"></span>
   <div class="section-eye">
     <div class="section-tag">Sistemas en producción</div>
     <h2 class="section-title">No vendemos humo.<br>Vendemos paneles que ya corren.</h2>
   </div>
   <div class="systems-tabs" role="tablist">
-    <button class="sys-tab active" data-sys="pelu" type="button">Peluquerías</button>
-    <button class="sys-tab" data-sys="sh" type="button">Tiendas</button>
-    <button class="sys-tab" data-sys="spa" type="button">SPA / Socios</button>
+    <button class="sys-tab active" data-sys="pelu" type="button" role="tab" aria-selected="true">Peluquerías</button>
+    <button class="sys-tab" data-sys="sh" type="button" role="tab" aria-selected="false">Tiendas</button>
+    <button class="sys-tab" data-sys="spa" type="button" role="tab" aria-selected="false">SPA / Socios</button>
   </div>
 
-  <div class="sys-panel gold active" data-sys="pelu">
-    <div class="sys-grid">
-      <div class="sys-visual">
-        <img class="sys-main" src="/assets/showcase/pelu-login.jpg" loading="lazy" decoding="async" alt="Login Gestión de Peluquerías">
+  <div class="device-inner sys-unified-inner">
+    <div class="device-wrap" id="deviceWrap">
+      <div class="device" id="deviceFrame">
+        <div class="dv-btn dv-action"></div>
+        <div class="dv-btn dv-volup"></div>
+        <div class="dv-btn dv-voldn"></div>
+        <div class="dv-btn dv-power"></div>
+        <div class="device-screen">
+          <!-- Peluquerías -->
+          <div class="device-demo-layer active" data-sys="pelu">
+            <div class="device-app device-app--pelu" data-interactive-demo>
+              <div class="device-app-view sdemo-login is-active" data-view="login">
+                <div class="sdemo-login-card">
+                  <p class="sdemo-login-kicker">Gestión de peluquerías</p>
+                  <h2 class="sdemo-login-title">Bienvenido de nuevo</h2>
+                  <p class="sdemo-login-sub">Ingrese sus datos para acceder al salón.</p>
+                  <form>
+                    <div class="sdemo-field">
+                      <label>Correo electrónico</label>
+                      <input type="email" value="verobasso@hotmail.com" autocomplete="off">
+                    </div>
+                    <div class="sdemo-field">
+                      <label>Contraseña</label>
+                      <input type="password" value="verobasso123" autocomplete="off">
+                    </div>
+                    <button class="sdemo-btn" type="submit">Iniciar sesión</button>
+                  </form>
+                </div>
+              </div>
+              <div class="device-app-view sdemo-dash is-hidden" data-view="dash">
+                <header class="sdemo-topbar">
+                  <span class="sdemo-topbar-brand">Veronica Basso</span>
+                </header>
+                <main class="sdemo-main">
+                  <h2>Informes de ventas del salón</h2>
+                  <p style="margin:0 0 8px;color:#64748b;font-size:0.82rem;">KPIs, tendencias y detalle de líneas vendidas.</p>
+                  <div class="sdemo-kpi-grid">
+                    <article class="sdemo-kpi"><span>Facturación</span><strong>$ 12.840</strong></article>
+                    <article class="sdemo-kpi"><span>Ventas cerradas</span><strong>18</strong></article>
+                    <article class="sdemo-kpi"><span>Ticket promedio</span><strong>$ 713</strong></article>
+                    <article class="sdemo-kpi"><span>Clientes</span><strong>42</strong></article>
+                  </div>
+                  <div class="sdemo-widget">
+                    <h3>Top categorías</h3>
+                    <ul class="sdemo-bars">
+                      <li>
+                        <div class="sdemo-bars-head"><span>Cortes dama</span><strong>$ 8.240</strong></div>
+                        <div class="sdemo-bar-track"><div class="sdemo-bar-fill" style="width:100%"></div></div>
+                      </li>
+                      <li>
+                        <div class="sdemo-bars-head"><span>Coloración</span><strong>$ 3.120</strong></div>
+                        <div class="sdemo-bar-track"><div class="sdemo-bar-fill" style="width:38%"></div></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <table class="sdemo-mini-table">
+                    <thead><tr><th>Venta</th><th>Cliente</th><th>Artículo</th><th>Total</th></tr></thead>
+                    <tbody>
+                      <tr><td>28</td><td>María L.</td><td>Corte + brushing</td><td>$ 980</td></tr>
+                      <tr><td>27</td><td>Lucía P.</td><td>Balayage</td><td>$ 2.450</td></tr>
+                      <tr><td>26</td><td>Ana R.</td><td>Corte clásico</td><td>$ 750</td></tr>
+                    </tbody>
+                  </table>
+                  <button type="button" class="sdemo-back" data-action="back-login">← Volver al login</button>
+                </main>
+              </div>
+            </div>
+          </div>
+          <!-- Tiendas -->
+          <div class="device-demo-layer" data-sys="sh">
+            <div class="device-app device-app--tiendas" data-interactive-demo>
+              <div class="device-app-view sdemo-login is-active" data-view="login">
+                <div class="sdemo-login-card">
+                  <div class="sdemo-login-logo"><span>Tiendas</span></div>
+                  <p class="sdemo-login-sub">Inicie sesión para continuar</p>
+                  <form>
+                    <div class="sdemo-field">
+                      <label>Correo electrónico</label>
+                      <input type="email" value="benja@gmail.com" autocomplete="off">
+                    </div>
+                    <div class="sdemo-field">
+                      <label>Contraseña</label>
+                      <input type="password" value="tienda2024" autocomplete="off">
+                    </div>
+                    <button class="sdemo-btn" type="submit">Iniciar sesión</button>
+                  </form>
+                </div>
+              </div>
+              <div class="device-app-view sdemo-dash is-hidden" data-view="dash">
+                <header class="sdemo-topbar">
+                  <span class="sdemo-topbar-brand">benja</span>
+                </header>
+                <main class="sdemo-main">
+                  <h2>Vivo TikTok</h2>
+                  <button type="button" class="sdemo-accent-btn">Empezar vivo</button>
+                  <div class="sdemo-card">
+                    <h3>Historial</h3>
+                    <div class="sdemo-table-wrap">
+                      <table class="sdemo-table">
+                        <thead><tr><th>#</th><th>Fecha</th><th>Dur.</th><th>Res.</th><th>$</th></tr></thead>
+                        <tbody>
+                          <tr><td>12</td><td>1/9</td><td>45m</td><td>12</td><td>$ 4.200</td></tr>
+                          <tr><td>11</td><td>28/8</td><td>38m</td><td>9</td><td>$ 3.150</td></tr>
+                          <tr><td>10</td><td>25/8</td><td>52m</td><td>15</td><td>$ 5.800</td></tr>
+                          <tr><td>9</td><td>22/8</td><td>31m</td><td>7</td><td>$ 2.400</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="sdemo-kpi-grid">
+                    <article class="sdemo-kpi"><span>Ventas hoy</span><strong>$ 1.280</strong></article>
+                    <article class="sdemo-kpi"><span>Prendas activas</span><strong>186</strong></article>
+                  </div>
+                  <button type="button" class="sdemo-back" data-action="back-login">← Volver al login</button>
+                </main>
+              </div>
+            </div>
+          </div>
+          <!-- SPA / Socios -->
+          <div class="device-demo-layer" data-sys="spa">
+            <div class="device-app" data-interactive-demo>
+              <div class="device-app-view da-login is-active" data-view="login">
+                <div class="da-login-card">
+                  <div class="da-login-brand">
+                    <img src="/assets/logo-wordmark.png" alt="FEBROS" width="120" height="30">
+                    <h2 class="da-login-title">Gestión</h2>
+                  </div>
+                  <p class="da-login-sub">Accedé a tu panel de gestión</p>
+                  <form>
+                    <div class="da-field">
+                      <label>Email</label>
+                      <input type="email" value="admin@gmail.com" autocomplete="off">
+                    </div>
+                    <div class="da-field">
+                      <label>Contraseña</label>
+                      <input type="password" value="demo1234" autocomplete="off">
+                    </div>
+                    <button class="da-btn-login" type="submit">Ingresar</button>
+                  </form>
+                </div>
+              </div>
+              <div class="device-app-view da-dash is-hidden" data-view="dash">
+                <header class="da-topbar">
+                  <button type="button" class="da-menu-btn" aria-label="Menú">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+                  </button>
+                  <span class="da-topbar-brand">Club FEBROS</span>
+                </header>
+                <main class="da-main">
+                  <div class="da-page-header">
+                    <h2>Informes y Control de Cobranza</h2>
+                    <p>Seguimiento de pagos, deudas, ingresos y socios activos</p>
+                  </div>
+                  <div class="da-tabs" role="tablist">
+                    <button type="button" class="da-tab is-active">Resumen</button>
+                    <button type="button" class="da-tab">Cobranza</button>
+                    <button type="button" class="da-tab">Ingresos</button>
+                  </div>
+                  <div class="da-stats">
+                    <div class="da-stat success"><div class="label">Pagos del mes</div><div class="value">$ 842.500</div></div>
+                    <div class="da-stat success"><div class="label">Cobrado en cuotas</div><div class="value">$ 615.200</div></div>
+                    <div class="da-stat danger"><div class="label">Total pendiente</div><div class="value">$ 48.300</div></div>
+                    <div class="da-stat"><div class="label">Socios activos</div><div class="value">256</div></div>
+                  </div>
+                  <div class="da-card">
+                    <h3>Cobranza — Septiembre 2026</h3>
+                    <p>23 cuotas pendientes · Cobranza al <b>92%</b> del mes.</p>
+                  </div>
+                  <button type="button" class="da-back" data-action="back-login">← Volver al login</button>
+                </main>
+              </div>
+            </div>
+          </div>
+          <div class="device-island"></div>
+          <div class="device-gloss"></div>
+        </div>
+        <div class="device-badge device-badge--demo">
+          <span class="device-badge-dot"></span>
+          Demo interactivo
+        </div>
       </div>
-      <div>
+      <p class="sys-demo-hint" id="sysDemoHint">Tocá <b>Iniciar sesión</b> para ver informes del salón</p>
+    </div>
+
+    <div class="sys-copy-wrap">
+      <div class="section-tag">Producto</div>
+      <h2 class="section-title sys-unified-title">Esto no es un render.<br>Es FEBROS, andando.</h2>
+
+      <div class="sys-panel gold active" data-sys="pelu" role="tabpanel">
         <div class="sys-kicker">Producto propio · Salones</div>
         <h3>Gestión de Peluquerías</h3>
         <p class="sys-lead">Tarifario, cobros, turnos con WhatsApp, inventario de tintes y reservas online.</p>
@@ -214,15 +399,8 @@
         <div class="sys-chips"><span>Cobro</span><span>Tarifario</span><span>Turnos</span><span>Inventario</span><span>Reservas</span></div>
         <a class="btn-secondary" href="https://febros-peluquerias.com/" target="_blank" rel="noopener">febros-peluquerias.com →</a>
       </div>
-    </div>
-  </div>
 
-  <div class="sys-panel" data-sys="sh">
-    <div class="sys-grid">
-      <div class="sys-visual">
-        <img class="sys-main" src="/assets/showcase/tiendas-login.jpg" loading="lazy" decoding="async" alt="Login Tiendas">
-      </div>
-      <div>
+      <div class="sys-panel" data-sys="sh" role="tabpanel">
         <div class="sys-kicker">A medida · Comercios</div>
         <h3>Tiendas</h3>
         <p class="sys-lead">Gestión de tiendas con caja, productos, proveedores, clientes y liquidaciones claras — todo desde el navegador.</p>
@@ -235,15 +413,8 @@
         <div class="sys-chips"><span>Caja</span><span>Consignación</span><span>Cuenta corriente</span><span>Liquidación</span></div>
         <a class="btn-secondary" href="#contacto">Necesito algo así →</a>
       </div>
-    </div>
-  </div>
 
-  <div class="sys-panel" data-sys="spa">
-    <div class="sys-grid">
-      <div class="sys-visual">
-        <img class="sys-main" src="/assets/showcase/spa-login.jpg" loading="lazy" decoding="async" alt="Login Gestión Socios">
-      </div>
-      <div>
+      <div class="sys-panel" data-sys="spa" role="tabpanel">
         <div class="sys-kicker">A medida · Socios &amp; cuotas</div>
         <h3>Gestión SPA / Socios</h3>
         <p class="sys-lead">Socios, familias, cuotas, cargos, cobranza y control de ingreso (también con biométrico).</p>
@@ -256,96 +427,8 @@
         <div class="sys-chips"><span>Socios</span><span>Cuotas</span><span>Cargos</span><span>Biométrico</span></div>
         <a class="btn-secondary" href="#contacto">Quiero un sistema a medida →</a>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- DEVICE MOCKUP -->
-<section class="device-section" id="producto">
-  <div class="device-inner">
-    <div class="device-wrap" id="deviceWrap">
-      <div class="device" id="deviceFrame">
-        <div class="dv-btn dv-action"></div>
-        <div class="dv-btn dv-volup"></div>
-        <div class="dv-btn dv-voldn"></div>
-        <div class="dv-btn dv-power"></div>
-        <div class="device-screen">
-          <div class="device-app" id="deviceApp">
-            <div class="device-app-view da-login is-active" id="deviceLogin">
-              <div class="da-login-card">
-                <div class="da-login-brand">
-                  <img src="/assets/logo-wordmark.png" alt="FEBROS" width="120" height="30">
-                  <h2 class="da-login-title">Gestión</h2>
-                </div>
-                <p class="da-login-sub">Accedé a tu panel de gestión</p>
-                <form id="deviceLoginForm">
-                  <div class="da-field">
-                    <label for="deviceEmail">Email</label>
-                    <input id="deviceEmail" type="email" placeholder="nombre@ejemplo.com" autocomplete="off">
-                  </div>
-                  <div class="da-field">
-                    <label for="devicePass">Contraseña</label>
-                    <input id="devicePass" type="password" placeholder="••••••••" autocomplete="off">
-                  </div>
-                  <button class="da-btn-login" type="submit">Ingresar</button>
-                </form>
-              </div>
-            </div>
-
-            <div class="device-app-view da-dash is-hidden" id="deviceDash">
-              <header class="da-topbar">
-                <button type="button" class="da-menu-btn" aria-label="Menú">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
-                </button>
-                <span class="da-topbar-brand">test</span>
-              </header>
-              <main class="da-main">
-                <div class="da-page-header">
-                  <h2>Informes y Control de Cobranza</h2>
-                  <p>Seguimiento de pagos, deudas, ingresos y socios activos</p>
-                </div>
-                <div class="da-tabs" role="tablist">
-                  <button type="button" class="da-tab is-active">Resumen</button>
-                  <button type="button" class="da-tab">Cobranza</button>
-                  <button type="button" class="da-tab">Ingresos</button>
-                  <button type="button" class="da-tab">Servicios</button>
-                </div>
-                <div class="da-toolbar">
-                  <select aria-label="Mes"><option>Septiembre</option><option>Agosto</option></select>
-                  <select aria-label="Año"><option>2026</option><option>2025</option></select>
-                </div>
-                <div class="da-stats">
-                  <div class="da-stat success"><div class="label">Pagos del mes</div><div class="value">$ 0</div></div>
-                  <div class="da-stat success"><div class="label">Cobrado en cuotas</div><div class="value">$ 0</div></div>
-                  <div class="da-stat danger"><div class="label">Total pendiente</div><div class="value">$ 0</div></div>
-                  <div class="da-stat warning"><div class="label">Cuotas pendientes</div><div class="value">0</div></div>
-                  <div class="da-stat"><div class="label">Cargos pendientes</div><div class="value">0</div></div>
-                  <div class="da-stat"><div class="label">Socios activos</div><div class="value">2</div></div>
-                  <div class="da-stat success"><div class="label">Ingresos hoy</div><div class="value">0</div></div>
-                </div>
-                <div class="da-card">
-                  <h3>Estado de cobranza — Septiembre 2026</h3>
-                  <p>¡Excelente! No hay deudas pendientes este mes.</p>
-                </div>
-                <button type="button" class="da-back" id="deviceBackLogin">← Volver al login</button>
-              </main>
-            </div>
-          </div>
-          <div class="device-island"></div>
-          <div class="device-gloss"></div>
-        </div>
-        <div class="device-badge device-badge--demo">
-          <span class="device-badge-dot"></span>
-          Demo interactivo
-        </div>
-      </div>
-    </div>
-
-    <div class="device-copy">
-      <div class="section-tag">Producto</div>
-      <h2 class="section-title">Esto no es un render.<br>Es FEBROS, andando.</h2>
-      <p class="device-lead">Tocá <b>Ingresar</b> en el celular y entrá al panel de Gestión Socios: informes, cuotas y cobranza en tiempo real.</p>
-      <ul class="device-list">
+      <ul class="device-list sys-unified-list">
         <li>
           <span class="device-check">
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.2l2.3 2.3L8.5 2.8" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>

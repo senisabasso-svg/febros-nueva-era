@@ -29,6 +29,7 @@
   // Light — always
   load('/assets/js/scroll-fade.js');
   load('/assets/js/systems.js');
+  load('/assets/js/showcase-demo.js');
   load('/assets/js/marquee.js');
 
   if (!REDUCE) {
@@ -43,7 +44,6 @@
 
   whenVisible(document.getElementById('deviceWrap'), function () {
     load('/assets/js/device.js');
-    load('/assets/js/device-demo.js');
   }, '400px 0px');
 
   whenVisible(document.getElementById('globeStage'), function () {
