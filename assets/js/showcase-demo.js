@@ -4,10 +4,14 @@
   window.__febrosDemoInit = true;
 
   function initDemo(root) {
+    if (root.dataset.demoReady) return;
+    root.dataset.demoReady = '1';
+
     var loginView = root.querySelector('[data-view="login"]');
     var dashView = root.querySelector('[data-view="dash"]');
     var form = root.querySelector('form');
     var backBtn = root.querySelector('[data-action="back-login"]');
+    var submitBtn = form && form.querySelector('button[type="submit"]');
     if (!loginView || !dashView || !form) return;
 
     function showDash() {
@@ -31,6 +35,13 @@
       showDash();
     });
 
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        showDash();
+      });
+    }
+
     if (backBtn) {
       backBtn.addEventListener('click', showLogin);
     }
@@ -49,5 +60,13 @@
     });
   }
 
-  document.querySelectorAll('[data-interactive-demo]').forEach(initDemo);
+  function boot() {
+    document.querySelectorAll('[data-interactive-demo]').forEach(initDemo);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();

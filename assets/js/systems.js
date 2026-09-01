@@ -7,6 +7,8 @@
   const panels = root.querySelectorAll('.sys-copy-wrap .sys-panel');
   const layers = root.querySelectorAll('.device-demo-layer');
   const hint = document.getElementById('sysDemoHint');
+  const screen = root.querySelector('.device-screen');
+  const layerAnchor = screen && screen.querySelector('.device-island');
 
   const hints = {
     pelu: 'Tocá <b>Iniciar sesión</b> para ver informes del salón',
@@ -39,7 +41,11 @@
     layers.forEach(function (layer) {
       const on = layer.dataset.sys === id;
       layer.classList.toggle('active', on);
-      if (!on) resetDemoLayer(layer);
+      if (!on) {
+        resetDemoLayer(layer);
+      } else if (screen && layerAnchor) {
+        screen.insertBefore(layer, layerAnchor);
+      }
     });
     root.classList.toggle('systems-unified--gold', id === 'pelu');
     if (hint && hints[id]) hint.innerHTML = hints[id];
