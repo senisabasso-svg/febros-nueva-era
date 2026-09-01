@@ -48,14 +48,12 @@
 
 .device-app--marketing .login-video {
   display: block;
-  width: 100%;
+  width: min(100%, 140px);
   height: auto;
-  max-height: 78px;
-  margin: 0 auto 8px;
+  margin: 4px auto 10px;
   object-fit: contain;
   object-position: center;
   pointer-events: none;
-  background: transparent;
 }
 
 .device-app--marketing .login-title {
