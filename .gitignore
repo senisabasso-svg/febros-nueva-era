@@ -1,0 +1,5 @@
+# Local secrets — never commit
+assets/js/env.js
+.env
+.env.*
+!.env.example

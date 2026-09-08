@@ -29,6 +29,7 @@
   <a href="#inicio" class="nav-logo"><img src="/assets/logo-wordmark.png" fetchpriority="high" decoding="async" alt="FEBROS Software Development" width="333" height="82"></a>
   <ul class="nav-links">
     <li><a href="#sistemas">Sistemas</a></li>
+    <li><a href="#webs">Webs</a></li>
     <li><a href="#producto">Producto</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -88,7 +89,7 @@
   </div>
 
   <div class="device-inner sys-unified-inner">
-    <div class="device-wrap" id="deviceWrap">
+    <div class="device-wrap" id="deviceWrap" data-tilt>
       <div class="device" id="deviceFrame">
         <div class="dv-btn dv-action"></div>
         <div class="dv-btn dv-volup"></div>
@@ -659,6 +660,99 @@
           <span>La misma pantalla en computadora, tablet y celular</span>
         </li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WEBS — generar landing con IA en el celular -->
+<section class="webs-wrap" id="webs">
+  <div class="section-eye">
+    <div class="section-tag">Webs</div>
+    <h2 class="section-title">Contanos tu rubro.<br>En segundos ves la web.</h2>
+  </div>
+  <div class="webs-inner">
+    <div class="webs-copy">
+      <p class="webs-lead">Completá unos datos y la IA arma un preview mobile de tu página. Así de fácil trabajamos las webs en FEBROS.</p>
+      <form class="webs-form" id="websForm">
+        <div class="webs-field">
+          <label for="websNombre">Nombre de empresa</label>
+          <input id="websNombre" name="nombre" type="text" required placeholder="Ej: Demo Peluquería" autocomplete="organization">
+        </div>
+        <div class="webs-row">
+          <div class="webs-field">
+            <label for="websRubro">Rubro</label>
+            <input id="websRubro" name="rubro" type="text" required list="websRubros" placeholder="Ej: Peluquería">
+            <datalist id="websRubros">
+              <option value="Peluquería"></option>
+              <option value="Spa / estética"></option>
+              <option value="Tienda de ropa"></option>
+              <option value="Gastronomía"></option>
+              <option value="Gimnasio / club"></option>
+              <option value="Servicios profesionales"></option>
+            </datalist>
+          </div>
+          <div class="webs-field">
+            <label for="websCiudad">Ciudad / zona</label>
+            <input id="websCiudad" name="ciudad" type="text" placeholder="Ej: Salto">
+          </div>
+        </div>
+        <div class="webs-row">
+          <div class="webs-field">
+            <label for="websEstilo">Estilo</label>
+            <select id="websEstilo" name="estilo">
+              <option value="moderno">Moderno</option>
+              <option value="elegante">Elegante</option>
+              <option value="cálido">Cálido</option>
+              <option value="minimal">Minimal</option>
+              <option value="bold">Bold / impactante</option>
+            </select>
+          </div>
+          <div class="webs-field">
+            <label for="websWhatsapp">WhatsApp</label>
+            <input id="websWhatsapp" name="whatsapp" type="text" placeholder="092 331 019" inputmode="tel">
+          </div>
+        </div>
+        <div class="webs-field">
+          <label for="websFrase">Frase / propuesta (opcional)</label>
+          <textarea id="websFrase" name="frase" placeholder="Ej: Atención personalizada y resultados que se notan."></textarea>
+        </div>
+        <div class="webs-actions">
+          <button type="submit" class="btn-primary" id="websSubmit">Generar mi web →</button>
+          <button type="button" class="btn-secondary" id="websReset">Limpiar</button>
+        </div>
+        <p class="webs-status" id="websStatus" role="status"></p>
+      </form>
+    </div>
+
+    <div class="webs-device-wrap">
+      <div class="device-wrap" id="websDeviceWrap" data-tilt>
+        <div class="device" id="websDeviceFrame">
+          <div class="dv-btn dv-action"></div>
+          <div class="dv-btn dv-volup"></div>
+          <div class="dv-btn dv-voldn"></div>
+          <div class="dv-btn dv-power"></div>
+          <div class="device-screen">
+            <iframe class="webs-preview" id="websPreview" title="Preview de la web generada" sandbox="allow-scripts allow-same-origin"></iframe>
+            <div class="webs-placeholder" id="websPlaceholder">
+              <strong>Tu web aparece acá</strong>
+              <span>Completá el formulario y tocá Generar. El preview se carga en este celular.</span>
+            </div>
+            <div class="webs-loading" id="websLoading" aria-live="polite">
+              <div>
+                <div class="webs-spinner" aria-hidden="true"></div>
+                Generando preview…
+              </div>
+            </div>
+            <div class="device-island"></div>
+            <div class="device-gloss"></div>
+          </div>
+          <div class="device-badge device-badge--demo">
+            <span class="device-badge-dot"></span>
+            Preview IA
+          </div>
+        </div>
+      </div>
+      <p class="webs-hint">Demo en vivo · preview generado según tus datos</p>
     </div>
   </div>
 </section>

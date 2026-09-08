@@ -1,0 +1,1 @@
+window.FEBROS_GEMINI_API_KEY = 'PEGÁ_TU_API_KEY_ACÁ';
