@@ -81,14 +81,9 @@
 
   whenVisible(document.getElementById('webs'), function () {
     loadCss('/assets/css/webs.css');
-    load('/assets/js/env.js')
-      .catch(function () {})
-      .then(function () {
-        return load('/assets/js/webs-example.js');
-      })
-      .then(function () {
-        return load('/assets/js/webs.js');
-      });
+    load('/assets/js/webs-templates.js').then(function () {
+      return load('/assets/js/webs.js');
+    });
     load('/assets/js/device.js');
   }, '350px 0px');
 
