@@ -6,6 +6,13 @@
 # Environment variables (Production):
 #   WEB_CHAT_API_KEY=<misma key que Railway marketing>
 #   WEB_CHAT_API_BASE=https://febrosmarketing-production.up.railway.app
-#   (o https://www.febrospuntodeventa.com si el backend responde ahí)
+#
+# Importante: preferí la URL *.up.railway.app (no el dominio custom).
+# Si WEB_CHAT_API_BASE apunta al mismo dominio Cloudflare que la landing,
+# el Origin del browser puede reenviarse y el backend responde
+# "Origen no permitido" aunque la API key sea válida.
+#
+# En el backend (Railway marketing), opcionalmente:
+#   WEB_CHAT_ALLOWED_ORIGINS=https://febrospuntodeventa.com,https://www.febrospuntodeventa.com
 #
 # La Function en /functions/api/chat.js atiende POST /api/chat

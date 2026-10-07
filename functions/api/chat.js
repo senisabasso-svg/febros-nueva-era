@@ -45,18 +45,21 @@ export async function onRequestPost(context) {
       : undefined;
 
   const apiBase = normalizeBase(env.WEB_CHAT_API_BASE);
+  // Server→server: do NOT forward browser Origin/Referer (backend allowlists Origin).
+  const upstreamHeaders = new Headers({
+    'Content-Type': 'application/json',
+    'X-Web-Chat-Key': apiKey
+  });
   let upstream;
   try {
     upstream = await fetch(`${apiBase}/api/web-chat/message`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Web-Chat-Key': apiKey
-      },
+      headers: upstreamHeaders,
       body: JSON.stringify({
         message: text.slice(0, MAX_LEN),
         ...(sessionToken ? { sessionToken } : {})
-      })
+      }),
+      redirect: 'manual'
     });
   } catch {
     return json({ error: 'No se pudo contactar al chat' }, 502);
