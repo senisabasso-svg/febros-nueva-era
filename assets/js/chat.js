@@ -90,15 +90,10 @@
       typing.remove();
 
       if (!res.ok) {
-        var msg = data.error || 'No pudimos enviar el mensaje. Intentá de nuevo.';
-        if (res.status === 405) {
-          msg =
-            'El proxy del chat no está activo en este hosting (405). Revisá el deploy de /api/chat.';
-        } else if (res.status === 503) {
-          msg = 'Chat no configurado en el servidor (falta WEB_CHAT_API_KEY).';
-        } else if (res.status === 403 && data.hint) {
-          msg = data.error + ' — ' + data.hint;
-        }
+        // Generic copy only — never surface upstream/config details
+        var msg = 'No pudimos enviar el mensaje. Intentá de nuevo.';
+        if (res.status === 429) msg = 'Demasiados mensajes. Probá en un momento.';
+        else if (res.status === 503) msg = 'Chat no disponible por ahora.';
         addMsg(msg, 'error');
         return;
       }

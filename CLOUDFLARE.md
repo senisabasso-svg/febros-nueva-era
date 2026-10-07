@@ -1,20 +1,9 @@
-# Cloudflare Pages
-# Build: (none / empty) — sitio estático
-# Output directory: /
-# Root: /
+# Cloudflare Pages — chat proxy
 #
-# Environment variables (Production):
-#   WEB_CHAT_API_KEY=<misma key que Railway marketing>
-#   WEB_CHAT_API_BASE=https://febrosmarketing-production.up.railway.app
+# Variables (Production), sin documentarlas en la UI del chat:
+#   WEB_CHAT_API_KEY
+#   WEB_CHAT_API_BASE          → host Railway del backend (*.up.railway.app)
+#   WEB_CHAT_PUBLIC_ORIGIN     → origen público allowlisteado (ej. https://febrospuntodeventa.com)
 #
-# Importante: preferí la URL *.up.railway.app (no el dominio custom).
-# Si WEB_CHAT_API_BASE apunta al mismo dominio Cloudflare que la landing,
-# el Origin del browser puede reenviarse y el backend responde
-# "Origen no permitido" aunque la API key sea válida.
-#
-# En el backend (Railway marketing), opcionalmente:
-#   WEB_CHAT_ALLOWED_ORIGINS=https://febrospuntodeventa.com,https://www.febrospuntodeventa.com
-#
-# La Function en /functions/api/chat.js atiende POST /api/chat
-
-# redeploy 2026-10-07T02:55:29.9590615-03:00
+# Function: /functions/api/chat.js → POST /api/chat
+# Las respuestas de error al browser son genéricas (sin URLs ni nombres de env).
