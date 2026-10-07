@@ -88,6 +88,8 @@
   }, '350px 0px');
 
   whenVisible(document.getElementById('globeStage'), function () {
-    idle(function () { load('/assets/js/globe.js'); }, 1200);
+    if (!window.matchMedia('(min-width: 901px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    idle(function () { load('/assets/js/globe.js'); }, 800);
   }, '0px 0px');
 })();

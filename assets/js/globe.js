@@ -10,22 +10,14 @@
   const canvas = document.getElementById('globeCanvas');
   const stage  = document.getElementById('globeStage');
   const hint   = document.getElementById('globeHint');
-  /* MOBILE_GLOBE_LIGHT */
+  /* Desktop-only: no globe on mobile */
   if(!canvas || !stage) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || isMobile){
     canvas.style.display = 'none';
     if(hint) hint.style.display = 'none';
     return;
   }
-  const isMobile = window.matchMedia('(max-width: 700px)').matches
-    || window.matchMedia('(pointer: coarse)').matches;
-  if(hint && isMobile) hint.style.display = 'none';
-  if(isMobile){
-    canvas.style.pointerEvents = 'none';
-    canvas.style.cursor = 'default';
-  }
-
-  if(!canvas || !stage) return;
 
   const ctx = canvas.getContext('2d', { alpha: true });
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

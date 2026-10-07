@@ -144,7 +144,7 @@ nav {
   z-index: 0;
 }
 
-/* dark lens behind the headline so the planet never fights the type */
+/* dark lens behind the headline — lighter so the globe reads as background on PC */
 .hero-scrim {
   position: absolute;
   left: 50%; top: 45%;
@@ -152,13 +152,22 @@ nav {
   width: min(1000px, 116vw);
   height: min(660px, 78vh);
   background: radial-gradient(ellipse at center,
-    rgba(5,11,22,0.90) 0%,
-    rgba(5,11,22,0.78) 34%,
-    rgba(5,11,22,0.40) 58%,
-    rgba(5,11,22,0.10) 74%,
+    rgba(5,11,22,0.72) 0%,
+    rgba(5,11,22,0.52) 34%,
+    rgba(5,11,22,0.28) 58%,
+    rgba(5,11,22,0.08) 74%,
     transparent 86%);
   pointer-events: none;
   z-index: 2;
+}
+@media (max-width:900px){
+  .hero-scrim{
+    background: radial-gradient(ellipse at center,
+      rgba(5,11,22,0.88) 0%,
+      rgba(5,11,22,0.70) 40%,
+      rgba(5,11,22,0.35) 68%,
+      transparent 86%);
+  }
 }
 
 /* content floats above the planet but lets drags pass through to it */
@@ -196,8 +205,8 @@ nav {
 
 h1 {
   font-family: 'Libre Franklin', sans-serif;
-  /* sized so the longest line ("Está desordenado.") clears the content column */
-  font-size: clamp(2.15rem, 5.5vw, 4.15rem);
+  /* sized so the longest hero line clears the content column */
+  font-size: clamp(2.05rem, 5.2vw, 3.85rem);
   font-weight: 800;
   line-height: 1.03;
   letter-spacing: -0.03em;
@@ -1354,16 +1363,13 @@ footer {
 .marquee-wrap{contain:content;}
 .feat-card{contain:layout paint;}
 .sys-visual{contain:content;}
-@media (max-width:700px){
+@media (max-width:900px){
   #bgCanvas{display:none!important}
   .intro-glow{opacity:.4}
-  #globeCanvas{
-    touch-action: pan-y;
-    pointer-events: none;
-    cursor: default;
+  #globeCanvas,
+  .globe-drag-hint{
+    display:none!important;
   }
-  #globeCanvas:active { cursor: default; }
-  .globe-drag-hint{display:none}
 }
 
 /* CARDSTACK PERF */
