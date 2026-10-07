@@ -16,3 +16,5 @@
 #   WEB_CHAT_ALLOWED_ORIGINS=https://febrospuntodeventa.com,https://www.febrospuntodeventa.com
 #
 # La Function en /functions/api/chat.js atiende POST /api/chat
+
+# redeploy 2026-10-07T02:55:29.9590615-03:00
