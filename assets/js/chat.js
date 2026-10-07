@@ -90,10 +90,14 @@
       typing.remove();
 
       if (!res.ok) {
-        addMsg(
-          data.error || 'No pudimos enviar el mensaje. Intentá de nuevo.',
-          'error'
-        );
+        var msg = data.error || 'No pudimos enviar el mensaje. Intentá de nuevo.';
+        if (res.status === 405) {
+          msg =
+            'El proxy del chat no está activo en este hosting (405). Revisá el deploy de /api/chat.';
+        } else if (res.status === 503) {
+          msg = 'Chat no configurado en el servidor (falta WEB_CHAT_API_KEY).';
+        }
+        addMsg(msg, 'error');
         return;
       }
 
