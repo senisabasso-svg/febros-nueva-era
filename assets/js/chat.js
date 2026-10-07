@@ -96,6 +96,8 @@
             'El proxy del chat no está activo en este hosting (405). Revisá el deploy de /api/chat.';
         } else if (res.status === 503) {
           msg = 'Chat no configurado en el servidor (falta WEB_CHAT_API_KEY).';
+        } else if (res.status === 403 && data.hint) {
+          msg = data.error + ' — ' + data.hint;
         }
         addMsg(msg, 'error');
         return;
