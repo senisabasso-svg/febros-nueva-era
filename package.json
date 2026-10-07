@@ -1,0 +1,17 @@
+{
+  "name": "febros-nueva-era",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing FEBROS con proxy seguro para web-chat",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  }
+}

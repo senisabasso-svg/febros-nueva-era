@@ -3,3 +3,9 @@ assets/js/env.js
 .env
 .env.*
 !.env.example
+
+# Dependencies / local tooling
+node_modules/
+.vercel/
+_gen_webs_templates.py
+_split.py

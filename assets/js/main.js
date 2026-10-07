@@ -92,4 +92,9 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     idle(function () { load('/assets/js/globe.js'); }, 800);
   }, '0px 0px');
+
+  idle(function () {
+    loadCss('/assets/css/chat.css');
+    load('/assets/js/chat.js');
+  }, 1200);
 })();

@@ -1,0 +1,214 @@
+/* FEBROS web chat widget */
+.febros-chat {
+  --chat-w: min(380px, calc(100vw - 28px));
+  --chat-h: min(520px, calc(100vh - 120px));
+  position: fixed;
+  right: 22px;
+  bottom: 90px;
+  z-index: 95;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.febros-chat-launcher {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #FF9538, #FF7300);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(255, 115, 0, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.febros-chat-launcher:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 32px rgba(255, 115, 0, 0.45);
+}
+
+.febros-chat-launcher[aria-expanded="true"] {
+  background: #0A1526;
+  border: 1px solid rgba(255, 115, 0, 0.35);
+}
+
+.febros-chat-panel {
+  position: absolute;
+  right: 0;
+  bottom: 68px;
+  width: var(--chat-w);
+  height: var(--chat-h);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(165deg, #0A1526 0%, #07111F 100%);
+  border: 1px solid rgba(255, 115, 0, 0.22);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.febros-chat.is-open .febros-chat-panel {
+  display: flex;
+}
+
+.febros-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 115, 0, 0.06);
+}
+
+.febros-chat-head strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #F0EEE8;
+}
+
+.febros-chat-head span {
+  display: block;
+  font-size: 0.72rem;
+  color: #8A9BB0;
+  margin-top: 2px;
+}
+
+.febros-chat-close {
+  border: none;
+  background: transparent;
+  color: #8A9BB0;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.febros-chat-close:hover {
+  color: #F0EEE8;
+}
+
+.febros-chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.febros-chat-msg {
+  max-width: 88%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.febros-chat-msg--bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #E8EEF7;
+  border-bottom-left-radius: 4px;
+}
+
+.febros-chat-msg--user {
+  align-self: flex-end;
+  background: linear-gradient(180deg, rgba(255, 149, 56, 0.95), rgba(255, 115, 0, 0.92));
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.febros-chat-msg--error {
+  align-self: stretch;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: #FECACA;
+  font-size: 0.8rem;
+}
+
+.febros-chat-msg--meta {
+  align-self: center;
+  max-width: 100%;
+  background: transparent;
+  color: #5A7089;
+  font-size: 0.72rem;
+  padding: 2px 0;
+}
+
+.febros-chat-typing {
+  align-self: flex-start;
+  color: #8A9BB0;
+  font-size: 0.8rem;
+  padding: 4px 2px;
+}
+
+.febros-chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(5, 11, 22, 0.55);
+}
+
+.febros-chat-form textarea {
+  resize: none;
+  min-height: 44px;
+  max-height: 110px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #F0EEE8;
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.febros-chat-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 115, 0, 0.45);
+}
+
+.febros-chat-form button[type="submit"] {
+  border: none;
+  border-radius: 12px;
+  padding: 0 16px;
+  background: #FF7300;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.febros-chat-form button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+@media (max-width: 560px) {
+  .febros-chat {
+    right: 14px;
+    bottom: 84px;
+  }
+  .febros-chat-panel {
+    bottom: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .febros-chat-launcher {
+    transition: none;
+  }
+  .febros-chat-log {
+    scroll-behavior: auto;
+  }
+}
